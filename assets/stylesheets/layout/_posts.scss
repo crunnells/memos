@@ -1,0 +1,50 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published){
+	display: none;
+}
+
+.byline,
+.single .byline,
+.group-blog .byline {
+	display: inline-block;
+	padding-bottom: 0.538461538em;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.entry-title {
+	font-size: 40px;
+	font-size: 2.5rem;
+	line-height: 1.225;
+	margin-bottom: 1.05em;
+}
+
+.entry-footer {
+	font-size: 0.8125rem;
+	line-height: 1.6153846154;
+}
+
+.entry-footer > span:not(:first-child):before {
+	content: "\002f";
+	display: inline-block;
+	opacity: 0.7;
+	padding: 0 0.538461538em;
+}
+
+.entry-footer .avatar {
+	height: 21px;
+	margin: -0.1538461538em 0.5384615385em 0 0;
+	width: 21px;
+}
+

@@ -1,0 +1,33 @@
+@import "../components/navigation-top";
+
+.site-header-menu.toggled-on .main-navigation,
+.site-header-menu.toggled-on .social-navigation {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.menu-toggle {
+  margin: 0 auto;
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+

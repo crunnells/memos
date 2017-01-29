@@ -1,0 +1,112 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+.site {
+	background-color: #fff;
+}
+
+.site-inner {
+	margin: 0 auto;
+	max-width: 1320px;
+	position: relative;
+}
+
+.site-title {
+	font-size: 23px;
+	font-size: 1.4375rem;
+	font-weight: 700;
+	line-height: 1.2173913043;
+	margin: 0;
+}
+
+.site-branding .site-title a:hover,
+.site-branding .site-title a:focus {
+	color: #007acc;
+}
+
+.site-description {
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: 400;
+	line-height: 1.0769230769;
+	margin: 0.538461538em 0 0;
+}
+
+.site-content {
+	word-wrap: break-word;
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+.site-main {
+	margin-bottom: 3.5em;
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+
+	article {
+		margin-bottom: 7em;
+	}
+}
+
+#primary {
+	float: none;
+	margin-right: 0;
+	width: 100%;
+}
+
+.sidebar {
+	float: none;
+	margin-left: 0;
+	padding: 0;
+	width: 100%;
+	padding-right: 7.6923%;
+	padding-left: 7.6923%;
+}
+
+// @import "content-sidebar";
+// @import "sidebar-content";
+
+
+/*--------------------------------------------------------------
+## Single Column / No Active Sidebar
+--------------------------------------------------------------*/
+.no-sidebar .site-main {
+  margin: 0;
+}
+
+.no-sidebar .content-area {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+@import "posts";
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+@import "pages";
+
+/*--------------------------------------------------------------
+## Media Queries
+--------------------------------------------------------------*/
+@import "media-queries";
