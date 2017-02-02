@@ -11,13 +11,30 @@
 }
 
 .comment-navigation,
-.posts-navigation,
 .post-navigation {
+
+	border-top: 4px solid $color__border;
+	border-bottom: 4px solid $color__border;
+	clear: both;
+	margin: 0 7.6932% 3.5em;
 
 	a {
 		color: $color__text-screen;
 		display: block;
 		padding: 1.75em 0;
+	}
+
+	a:hover .post-title,
+	a:focus .post-title {
+		color: $color__link;
+	}
+
+	span {
+		display: block;
+	}
+
+	div + div {
+		border-top: 4px solid $color__border;
 	}
 
 	.meta-nav {
@@ -30,20 +47,24 @@
 		text-transform: uppercase;
 	}
 
+	.post-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+		line-height: 1.25;
+	}
+
 	.site-main & {
 		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
+	.nav-previous {}
 
 	.nav-next {
-		float: right;
 		text-align: right;
-		width: 50%;
 	}
 }
 
+.site-main > :last-child {
+	margin-bottom: 0;
+}

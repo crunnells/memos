@@ -111,13 +111,14 @@ if ( ! function_exists( 'memos_post_navigation' ) ) :
  */
 function memos_post_navigation() {
     $navigation = '';
-    $previous   = get_previous_post_link( '<div class="nav-previous"><span class="meta-nav">Previous</span> <span class="post-title">%link</span></div>' );
-    $next       = get_next_post_link( '<div class="nav-next"><span class="meta-nav">Next</span> <span class="post-title">%link</span></div>' );
+    // Who knew you could change the nav links this much?
+    $previous   = get_previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">Previous</span> <span class="post-title">%title</span></span>' );
+    $next       = get_next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">Next</span> <span class="post-title">%title</span></span>' );
 
     // Only add markup if there's somewhere to navigate to.
     if ( $previous || $next ) {
 	    // Wrap the links up in a nice tidy <nav> element
-        $navigation = _navigation_markup( $previous . $next );
+        $navigation = _navigation_markup( $previous . $next, 'post-navigation' );
     }
 
     echo $navigation;

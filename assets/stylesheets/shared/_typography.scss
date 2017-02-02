@@ -118,21 +118,6 @@ blockquote small,
 	color: $color__text-screen;
 }
 
-blockquote,
-.menu-toggle.toggled-on,
-.menu-toggle.toggled-on:hover,
-.menu-toggle.toggled-on:focus,
-.post-navigation,
-.post-navigation div + div,
-.pagination,
-.widget,
-.page-header,
-.page-links a,
-.comments-title,
-.comment-reply-title {
-	border-color: $color__text-screen;
-}
-
 button,
 button[disabled]:hover,
 button[disabled]:focus,
