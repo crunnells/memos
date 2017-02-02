@@ -389,6 +389,11 @@ blockquote, q {
 .post-navigation .post-title {
   font-family: Merriweather, Georgia, serif; }
 
+.meta-nav,
+.widget-title,
+.main-navigation {
+  font-family: Montserrat, "Helvetica Neue", sans-serif; }
+
 /* Main Text Color */
 body,
 blockquote cite,
@@ -757,6 +762,24 @@ table {
 .menu-toggle {
   margin: 0 auto; }
 
+.comment-navigation a,
+.posts-navigation a,
+.post-navigation a {
+  color: #2e4453;
+  display: block;
+  padding: 1.75em 0; }
+
+.comment-navigation .meta-nav,
+.posts-navigation .meta-nav,
+.post-navigation .meta-nav {
+  color: #686868;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.076923077em;
+  line-height: 1.6153846154;
+  margin-bottom: .5384615385em;
+  text-transform: uppercase; }
+
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -780,12 +803,12 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-  color: #3d596d;
+  color: #007acc;
   text-decoration: none; }
   a:hover,
   a:focus,
   a:active {
-    color: #0087be; }
+    color: #3d596d; }
   a:focus {
     outline: thin dotted; }
   a:hover,
@@ -823,11 +846,15 @@ body {
   line-height: 1.2173913043;
   margin: 0; }
 
+.wp-custom-logo .site-title {
+  margin-top: 0.5em; }
+
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
   color: #007acc; }
 
 .site-description {
+  color: #3d596d;
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -853,13 +880,15 @@ body {
   margin-right: 0;
   width: 100%; }
 
-.sidebar {
+#secondary {
   float: none;
   margin-left: 0;
   padding: 0;
   width: 100%;
-  padding-right: 7.6923%;
-  padding-left: 7.6923%; }
+  /*
+	padding-right: 7.6923%;
+	padding-left: 7.6923%;
+*/ }
 
 /*--------------------------------------------------------------
 ## Single Column / No Active Sidebar
@@ -904,17 +933,38 @@ body {
 .entry-footer {
   font-size: 0.8125rem;
   line-height: 1.6153846154; }
+  .entry-footer > span:not(:first-child):before {
+    content: "\002f";
+    display: inline-block;
+    opacity: 0.7;
+    padding: 0 0.53846em; }
+  .entry-footer .author-info {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    clear: both;
+    padding-top: 1.75em;
+    padding-bottom: 1.75em; }
+  .entry-footer .author-title {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0; }
+  .entry-footer .avatar {
+    height: 21px;
+    margin: -0.15385em 0.53846em 0 0;
+    width: 21px; }
+  .entry-footer .author-avatar .avatar {
+    float: left;
+    height: 42px;
+    margin: 0 1.75em 1.75em 0;
+    width: 42px; }
+  .entry-footer .author-link {
+    color: #007acc;
+    display: block; }
 
-.entry-footer > span:not(:first-child):before {
-  content: "\002f";
-  display: inline-block;
-  opacity: 0.7;
-  padding: 0 0.53846em; }
-
-.entry-footer .avatar {
-  height: 21px;
-  margin: -0.15385em 0.53846em 0 0;
-  width: 21px; }
+.single .entry-footer > span:not(:first-child):before {
+  content: "";
+  padding: 0; }
 
 /*--------------------------------------------------------------
 ## Pages
@@ -1056,11 +1106,13 @@ body {
   body:not(.search-results) article:not(.type-page) .entry-footer .edit-link {
     display: inline-block;
     margin-bottom: inherit; }
-  body:not(.search-results) article:not(.type-page) .entry-footer .avatar {
+  body:not(.search-results) article:not(.type-page) .entry-footer .author .avatar {
     display: inline-block;
     height: 21px;
     margin: -0.15385em 0.53846em 0 0;
-    width: 21px; } }
+    width: 21px; }
+  .widget {
+    margin-bottom: 4.307692308em; } }
 
 /*--------------------------------------------------------------
 # Comments
@@ -1075,10 +1127,25 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
+  border-top: 4px solid #e9eff3;
+  font-size: 0.8215rem;
+  line-height: 1.6153846154;
   margin: 0 0 1.5em;
+  padding-top: 1.615384615em;
   /* Make sure select elements fit in widgets. */ }
+  .widget .widget-title {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .046875em;
+    line-height: 1.3125;
+    margin: 0 0 1.75em;
+    text-transform: uppercase; }
   .widget select {
     max-width: 100%; }
+  .widget ul {
+    margin-left: 0;
+    padding-left: 1.3125em; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

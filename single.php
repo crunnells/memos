@@ -17,7 +17,7 @@ get_header(); ?>
 
 			get_template_part( 'components/post/content', get_post_format() );
 
-			the_post_navigation();
+			memos_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -28,6 +28,9 @@ get_header(); ?>
 		?>
 
 		</main>
+
+		<?php memos_content_bottom_widgets(); ?>
+
 	</div>
 <?php
 get_sidebar();

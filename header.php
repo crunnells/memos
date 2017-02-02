@@ -33,8 +33,6 @@
 
 			<?php memos_custom_header(); ?>
 
-			<?php memos_social_menu(); ?>
-
 		</div>
 	</header>
 	<div id="content" class="site-content">

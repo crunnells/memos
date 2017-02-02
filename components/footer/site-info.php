@@ -3,3 +3,5 @@
 	<span class="sep"> | </span>
 	<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'memos' ), 'Memos', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 </div><!-- .site-info -->
+
+<?php memos_social_menu(); ?>

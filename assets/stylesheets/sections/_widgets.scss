@@ -1,8 +1,27 @@
 .widget {
+	border-top: 4px solid $color__border;
+	font-size: 0.8215rem;
+	line-height: 1.6153846154;
 	margin: 0 0 1.5em;
+	padding-top: 1.615384615em;
+
+	.widget-title {
+		font-size: 16px;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: .046875em;
+		line-height: 1.3125;
+		margin: 0 0 1.75em;
+		text-transform: uppercase;
+	}
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+
+	ul {
+		margin-left: 0;
+		padding-left: 1.3125em;
 	}
 }

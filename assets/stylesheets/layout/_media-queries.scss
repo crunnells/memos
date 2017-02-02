@@ -177,10 +177,14 @@
 		margin-bottom: inherit;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-footer .avatar {
+	body:not(.search-results) article:not(.type-page) .entry-footer .author .avatar {
 		display: inline-block;
 		height: 21px;
 		margin: -0.1538461538em 0.5384615385em 0 0;
 		width: 21px;
+	}
+
+	.widget {
+		margin-bottom: 4.307692308em;
 	}
 }

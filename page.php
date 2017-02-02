@@ -31,6 +31,9 @@ get_header(); ?>
 			?>
 
 		</main>
+
+		<?php memos_content_bottom_widgets(); ?>
+
 	</div>
 <?php
 get_sidebar();

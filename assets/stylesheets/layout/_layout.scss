@@ -30,12 +30,17 @@ body {
 	margin: 0;
 }
 
+.wp-custom-logo .site-title {
+	margin-top: 0.5em;
+}
+
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
 	color: #007acc;
 }
 
 .site-description {
+	color: $color__text-secondary;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 400;
@@ -70,13 +75,15 @@ body {
 	width: 100%;
 }
 
-.sidebar {
+#secondary {
 	float: none;
 	margin-left: 0;
 	padding: 0;
 	width: 100%;
+/*
 	padding-right: 7.6923%;
 	padding-left: 7.6923%;
+*/
 }
 
 // @import "content-sidebar";
