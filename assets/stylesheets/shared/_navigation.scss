@@ -2,17 +2,20 @@
 
 .site-header-menu.toggled-on .main-navigation,
 .site-header-menu.toggled-on .social-navigation {
-  margin-right: 0;
-  margin-left: 0;
+	margin-right: 0;
+	margin-left: 0;
 }
 
 .menu-toggle {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
-.comment-navigation,
-.post-navigation {
+.site-branding .site-title a:hover,
+.site-branding .site-title a:focus {
+	color: $color__link;
+}
 
+.post-navigation {
 	border-top: 4px solid $color__border;
 	border-bottom: 4px solid $color__border;
 	clear: both;
@@ -58,13 +61,7 @@
 		overflow: hidden;
 	}
 
-	.nav-previous {}
-
 	.nav-next {
 		text-align: right;
 	}
-}
-
-.site-main > :last-child {
-	margin-bottom: 0;
 }

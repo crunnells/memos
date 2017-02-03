@@ -33,27 +33,17 @@
 		width: auto;
 	}
 
+	.header-image {
+		margin: 1.75em 0;
+	}
+
 	.site-header-menu.toggled-on .main-navigation,
 	.site-header-menu.toggled-on .social-navigation {
 		margin-right: 7.6923%;
 		margin-left: 7.6923%;
 	}
 
-	.entry-header,
-	.post-thumbnail,
-	.entry-content,
-	.entry-summary,
-	.entry-footer,
-	.comments-area,
-	.image-navigation,
-	.post-navigation,
-	.page-header,
-	.page-content,
-	.content-bottom-widgets {
-		margin-right: 7.6923%;
-	}
-
-	.sidebar {
+	.widget-area {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
@@ -61,7 +51,7 @@
 		-moz-column-gap: 52px;
 		column-gap: 52px;
 	}
-	.sidebar section {
+	.widget-area section {
 		-webkit-column-break-inside: avoid;
 		page-break-inside: avoid;
 		break-inside: avoid-column;
@@ -122,12 +112,12 @@
 
 	.main-navigation,
 	.site-footer .social-navigation,
-	.sidebar section {
+	.widget-area section {
 		margin-right: 0;
 		margin-left: 0;
 	}
 
-	.sidebar {
+	.widget-area {
 		padding: 0;
 	}
 
@@ -182,6 +172,10 @@
 		height: 21px;
 		margin: -0.1538461538em 0.5384615385em 0 0;
 		width: 21px;
+	}
+
+	.site-main {
+		margin-bottom: 7em;
 	}
 
 	.widget {

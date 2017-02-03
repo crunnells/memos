@@ -47,7 +47,7 @@ function memos_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Top', 'memos' ),
-		) );
+	) );
 
 	/**
 	 * Add support for core custom logo.
@@ -103,15 +103,6 @@ function memos_the_custom_logo() {
 		return;
 	} else {
 		the_custom_logo();
-	}
-}
-
-/**
- * Display custom header image
- */
-function memos_custom_header() {
-	if ( get_header_image() ) {
-		echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . header_image() . '" width="' . esc_attr( get_custom_header()->width ) . '" height="' . esc_attr( get_custom_header()->height ) . '" alt=""></a>';
 	}
 }
 
@@ -180,3 +171,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom header image support.
+ */
+require get_template_directory() . '/inc/custom-header.php';

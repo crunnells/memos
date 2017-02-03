@@ -17,6 +17,12 @@
 	padding-bottom: 0.538461538em;
 }
 
+.byline .avatar {
+	height: 21px;
+	margin: -0.1538461538em 0.5384615385em 0 0;
+	width: 21px;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -31,6 +37,7 @@
 }
 
 .entry-footer {
+	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
 
@@ -41,41 +48,40 @@
 		padding: 0 0.538461538em;
 	}
 
-	.author-info {
-		border-color: transparent;
-		border-style: solid;
-		border-width: 1px 0 1px 0;
-		clear: both;
-		padding-top: 1.75em;
-		padding-bottom: 1.75em;
-	}
-
-	.author-title {
-		font-size: 1rem;
-		line-height: 1.75;
-		margin: 0;
-	}
-
-	.avatar {
-		height: 21px;
-		margin: -0.1538461538em 0.5384615385em 0 0;
-		width: 21px;
-	}
-
-	.author-avatar .avatar {
-		float: left;
-		height: 42px;
-		margin: 0 1.75em 1.75em 0;
-		width: 42px;
-	}
-
-	.author-link {
-		color: $color__link;
-		display: block;
+	.single & > span:not(:first-child):before {
+		content: "";
+		padding: 0;
 	}
 }
 
-.single .entry-footer > span:not(:first-child):before {
-	content: "";
-	padding: 0;
+.author-info {
+	border-color: $color__border;
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+	clear: both;
+	padding-top: 1.75em;
+	padding-bottom: 1.75em;
+}
+
+.author-avatar .avatar {
+	float: left;
+	height: 42px;
+	margin: 0.375em 1.75em 1.75em 0;
+	width: 42px;
+}
+
+.author-title {
+	clear: none;
+	font-size: 1rem;
+	line-height: 1.75;
+	margin: 0;
+}
+
+.author-description > :last-child {
+	margin-bottom: 0;
+}
+
+.author-link {
+	color: $color__link;
+	display: block;
 }

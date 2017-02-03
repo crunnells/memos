@@ -31,8 +31,9 @@
 
 			<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
-			<?php memos_custom_header(); ?>
-
 		</div>
+
+		<?php memos_custom_header(); ?>
+
 	</header>
 	<div id="content" class="site-content">

@@ -17,12 +17,12 @@ get_header(); ?>
 
 			get_template_part( 'components/post/content', get_post_format() );
 
-			memos_post_navigation();
-
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
+
+			memos_post_navigation();
 
 		endwhile; // End of the loop.
 		?>

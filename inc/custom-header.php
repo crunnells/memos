@@ -71,3 +71,19 @@ function memos_header_style() {
 	<?php
 }
 endif; // memos_header_style
+
+if ( ! function_exists( 'memos_custom_header' ) ) :
+/**
+ * Displays a custom header image.
+ */
+function memos_custom_header() {
+	if ( ! get_header_image() ) {
+		return;
+	}
+
+	echo '<div class="header-image"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">';
+	echo '<img src="' . get_header_image() . '" width="' . esc_attr( get_custom_header()->width ) . '" height="' . esc_attr( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+	echo '</a></div>';
+}
+
+endif; // memos_custom_header

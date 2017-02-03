@@ -67,25 +67,6 @@ if ( ! function_exists( 'memos_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function memos_entry_footer() {
-	// Show author info on post pages
-/*	if ( 'post' === get_post_type() && is_single() ) {
-
-
-
-		// translators: used between list items, there is a space after the comma
-		$categories_list = get_the_category_list( esc_html__( ', ', 'memos' ) );
-		if ( $categories_list && memos_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="screen-reader-text">' . esc_html__( 'Categories', 'memos') . '</span></span>', $categories_list ); // WPCS: XSS OK.
-		}
-
-		// translators: used between list items, there is a space after the comma
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'memos' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="screen-reader-text">' . esc_html__( 'Tags', 'memos') . '</span></span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-*/
-
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( esc_html__( 'Leave a comment', 'memos' ), esc_html__( '1 Comment', 'memos' ), esc_html__( '% Comments', 'memos' ) );
@@ -101,7 +82,6 @@ function memos_entry_footer() {
 			'</span>'
 		);
 	}
-
 }
 endif;
 
