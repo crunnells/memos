@@ -25,36 +25,39 @@ object {
 }
 
 .wp-caption {
-	margin: 1em 0 1.5em;
+	margin-bottom: 1.75em;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
 		@include center-block;
 	}
 
+	// Ensure center-aligned captions center-align properly.
+	&.aligncenter {
+			margin-left: auto;
+			margin-right: auto;
+	}
+
+	// Give some padding to floated elements, to prevent them butting up against text.
+	&.alignleft {
+			margin-right: 20px;
+	}
+
+	&.alignright {
+			margin-left: 20px;
+	}
+
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		color: $color__text-tertiary;
+		font-size: 13px;
+		font-size: 0.8125rem;
+		font-style: italic;
+		line-height: 1.6153846154;
+		padding-top: 0.5384615385em;
+		text-align: center;
 	}
 }
 
-/* Ensure center-aligned captions center-align properly. */
-.wp-caption.aligncenter {
-		margin-left: auto;
-		margin-right: auto;
-}
-
-/* Give some padding to floated elements, to prevent them butting up against text. */
-.wp-caption.alignleft {
-		margin-right: 20px;
-}
-
-.wp-caption.alignright {
-		margin-left: 20px;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
 
 /*--------------------------------------------------------------
 ## Galleries

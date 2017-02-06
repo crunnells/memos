@@ -12,6 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+			if ( is_sticky() ) {
+				echo '<span class="sticky-post">' . __( 'Featured', 'memos' ) . '</span>';
+			}
+
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
@@ -21,9 +25,9 @@
 	</header>
 	<?php
 		if ( has_post_thumbnail() && ! is_single() ) {
-			echo '<a class="post-thumbnail" href="' . esc_url( get_permalink() ) . '">' . the_post_thumbnail() . '</a>';
+			echo '<a class="post-thumbnail" href="' . esc_url( get_permalink() ) . '">' . get_the_post_thumbnail() . '</a>';
 		} elseif ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+			echo '<div class="post-thumbnail">' . get_the_post_thumbnail() . '</div>';
 		}
 	?>
 	<div class="entry-content">
@@ -37,6 +41,8 @@
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'memos' ),
 				'after'  => '</div>',
+				'link_before' => '<span>',
+				'link_after' => '</span>',
 			) );
 		?>
 	</div>

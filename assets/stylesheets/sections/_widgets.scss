@@ -25,4 +25,24 @@
 		padding-left: 1.3125em;
 		margin-bottom: 1.75em;
 	}
+
+	li > ul,
+	li > ol {
+		margin-bottom: 0;
+	}
+
+}
+
+.widget_recent_entries .post-date,
+.widget_rss .rss-date {
+	color: $color__text-tertiary;
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.615384615;
+	margin-bottom: 0.538461538em;
+}
+
+.widget_rss li {
+	margin-bottom: 0.625em;
 }

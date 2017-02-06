@@ -29,11 +29,30 @@
 	margin: 1.5em 0 0;
 }
 
+.entry-content ul,
+.entry-summary ul,
+.comment-content ul,
+.entry-content ol,
+.entry-summary ol,
+.comment-content ol {
+	margin-left: 1.5em;
+}
+
 .entry-title {
 	font-size: 40px;
 	font-size: 2.5rem;
 	line-height: 1.225;
 	margin-bottom: 1.05em;
+}
+
+.post-thumbnail {
+	display: block;
+	margin-bottom: 1.75em;
+}
+
+.post-thumbnail img {
+	display: block;
+	margin: 0 auto;
 }
 
 .entry-footer {
@@ -52,6 +71,17 @@
 		content: "";
 		padding: 0;
 	}
+}
+
+.sticky-post {
+	color: $color__text-tertiary;
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	letter-spacing: 0.076923077em;
+	line-height: 1.6153846154;
+	margin-bottom: 0.5384615385em;
+	text-transform: uppercase;
 }
 
 .author-info {
@@ -84,4 +114,79 @@
 .author-link {
 	color: $color__link;
 	display: block;
+}
+
+.taxonomy-description {
+	color: #686868;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.6153846154;
+}
+
+.taxonomy-description p {
+	margin: 0.5384615385em 0 1.6153846154em;
+}
+
+.taxonomy-description > :last-child {
+	margin-bottom: 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.75em;
+}
+
+.page-links a,
+.page-links > span {
+	border: 1px solid $color__border-alt;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	height: 1.8461538462em;
+	line-height: 1.6923076923em;
+	margin-right: 0.3076923077em;
+	text-align: center;
+	width: 1.8461538462em;
+}
+
+.page-links a,
+.page-links a:link {
+	background-color: $color__background-button;
+	border-color: $color__background-button;
+	color: $color__text-screen;
+	box-shadow: none;
+}
+
+.page-links a:hover,
+.page-links a:focus {
+	background-color: $color__link;
+	border-color: transparent;
+	color: #fff;
+}
+
+.page-links > .page-links-title {
+	border: 0;
+	color: $color__border-alt;
+	height: auto;
+	margin: 0;
+	padding-right: 0.6153846154em;
+	width: auto;
+}
+
+.entry-attachment {
+	margin-bottom: 1.75em;
+}
+
+.entry-caption {
+	color: $color__text-tertiary;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.6153846154;
+	padding-top: 1.0769230769em;
+}
+
+.entry-caption > :last-child {
+	margin-bottom: 0;
 }

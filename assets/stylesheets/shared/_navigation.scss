@@ -15,11 +15,14 @@
 	color: $color__link;
 }
 
-.post-navigation {
+.post-navigation,
+.posts-navigation {
 	border-top: 4px solid $color__border;
 	border-bottom: 4px solid $color__border;
 	clear: both;
-	margin: 0 7.6932% 3.5em;
+}
+
+.post-navigation {
 
 	a {
 		color: $color__text-screen;
@@ -41,7 +44,7 @@
 	}
 
 	.meta-nav {
-		color: $color__link-secondary;
+		color: $color__text-tertiary;
 		font-size: 13px;
 		font-size: 0.8125rem;
 		letter-spacing: 0.076923077em;
@@ -63,5 +66,68 @@
 
 	.nav-next {
 		text-align: right;
+	}
+}
+
+.posts-navigation {
+
+	.nav-links div,
+	.nav-links a {
+		display: inline-block;
+		width: 50%;
+	}
+
+	.nav-links a {
+		color: $color__text-screen;
+		font-size: 24px;
+		font-size: 1.5rem;
+		line-height: 1.25em;
+		padding: 1.75em 0;
+	}
+
+	a:hover,
+	a:focus {
+		color: $color__link;
+	}
+
+	.nav-next {
+		text-align: right;
+	}
+
+}
+
+.site-footer .social-navigation {
+	margin-bottom: 1.75em;
+	text-align: center;
+}
+
+.jetpack-social-navigation {
+
+	.menu-item {
+		margin: 0 0.4375em 0.4375em 0;
+
+		a {
+			border: 1px solid $color__border;
+			border-radius: 50%;
+			color: $color__link-hover;
+			display: block;
+			height: 2.25em;
+			position: relative;
+			width: 2.25em;
+		}
+
+		a:before {
+			line-height: 2.0625em;
+			height: 2.0625em;
+			width: 2.0625em;
+		}
+
+		a:hover {
+			box-shadow: none;
+		}
+
+		a:hover:before {
+			color: $color__link;
+		}
 	}
 }

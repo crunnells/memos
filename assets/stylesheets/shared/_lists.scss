@@ -1,5 +1,6 @@
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.75em 1.25em;
+	padding: 0;
 }
 
 ul {
@@ -8,12 +9,12 @@ ul {
 
 ol {
 	list-style: decimal;
+	margin-left: 1.5em;
 }
 
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {

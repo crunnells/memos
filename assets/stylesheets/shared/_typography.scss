@@ -12,7 +12,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: 700;
-	margin: 0 0 1.75em;
+	margin: 0 0 1.25em;
 	text-rendering: optimizeLegibility;
 }
 
@@ -93,7 +93,9 @@ blockquote, q {
 
 .meta-nav,
 .widget-title,
-.main-navigation {
+.sticky-post,
+.main-navigation,
+.page-links {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 }
 
@@ -101,20 +103,10 @@ blockquote, q {
 body,
 blockquote cite,
 blockquote small,
-.main-navigation a,
 .menu-toggle,
 .dropdown-toggle,
-.social-navigation a,
-.post-navigation a,
-.pagination a:hover,
-.pagination a:focus,
-.widget-title a,
-.site-branding .site-title a,
-.entry-title a,
 .page-links > .page-links-title,
-.comment-author,
-.comment-reply-title small a:hover,
-.comment-reply-title small a:focus {
+.comment-author {
 	color: $color__text-screen;
 }
 
@@ -136,8 +128,7 @@ input[type="submit"][disabled]:focus,
 .pagination:before,
 .pagination:after,
 .pagination .prev,
-.pagination .next,
-.page-links a {
+.pagination .next {
 	background-color: $color__text-screen;
 }
 
@@ -151,12 +142,8 @@ body:not(.search-results) .entry-summary {
 	color: $color__text-secondary;
 }
 
-/* Drab links */
 blockquote,
 .post-password-form label,
-a:hover,
-a:focus,
-a:active,
 .post-navigation .meta-nav,
 .image-navigation,
 .comment-navigation,
@@ -166,17 +153,14 @@ a:active,
 .site-description,
 .author-bio,
 .entry-footer,
-.entry-footer a,
 .sticky-post,
 .taxonomy-description,
 .entry-caption,
 .comment-metadata,
 .pingback .edit-link,
-.comment-metadata a,
 .pingback .comment-edit-link,
 .comment-form label,
 .comment-notes,
-.comment-author a,
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags,
@@ -187,20 +171,6 @@ a:active,
 .widecolumn label,
 .widecolumn .mu_register label {
 	color: $color__text-secondary;
-}
-
-/* Fun links */
-.entry-content a:link,
-.entry-content a:hover,
-.site-footer a:hover {
-	box-shadow: 0 1px 0 0 currentColor;
-	color: $color__link;
-}
-
-
-.widget_calendar tbody a:hover,
-.widget_calendar tbody a:focus {
-	background-color: $color__text-secondary;
 }
 
 /* Border Color */
