@@ -77,6 +77,12 @@ function memos_setup() {
 		'default-image' => '',
 	) ) );
 
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style( array( 'editor-style.css', memos_fonts_url() ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'memos_setup' );
@@ -89,7 +95,7 @@ add_action( 'after_setup_theme', 'memos_setup' );
  * @global int $content_width
  */
 function memos_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'memos_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'memos_content_width', 700 );
 }
 add_action( 'after_setup_theme', 'memos_content_width', 0 );
 
@@ -140,7 +146,7 @@ add_action( 'widgets_init', 'memos_widgets_init' );
 function memos_scripts() {
 	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'memos-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,700,900,400italic,700italic,900italic|Montserrat:400,700|Inconsolata:400&subset=latin,latin-ext' );
+	wp_enqueue_style( 'memos-fonts', memos_fonts_url() );
 
 	wp_enqueue_script( 'memos-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
@@ -151,6 +157,37 @@ function memos_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'memos_scripts' );
+
+
+if ( ! function_exists( 'memos_fonts_url' ) ) :
+/**
+ * Register Google fonts for Memos.
+ */
+function memos_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'memos' ) ) {
+		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+	}
+	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'memos' ) ) {
+		$fonts[] = 'Montserrat:400,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'memos' ) ) {
+		$fonts[] = 'Inconsolata:400';
+	}
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
+}
+endif;
 
 /**
  * Custom template tags for this theme.
