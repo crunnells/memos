@@ -56,8 +56,13 @@
 
 	}
 
+	.nav-menu {
+		border-bottom: 1px solid $color__border;
+		margin: 0.875em 0;
+	}
+
 	li {
-		display: inline-block;
+		border-top: 1px solid $color__border;
 		position: relative;
 		text-align: left;
 
@@ -90,10 +95,47 @@
 	display: block;
 }
 
-.menu-toggle:before {
-	content: "\2630";
-	display: inline-block;
-	margin-right: 5px;
+.menu-toggle {
+	background-color: transparent;
+	border: 1px solid $color__border-alt;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: 400;
+	margin: 1.076923077em auto;
+	padding: 0.769230769em;
+
+	&:before {
+		content: "\2630";
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.no-js & {
+		display: none;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		border-color: $color__link;
+		color: $color__link;
+	}
+}
+
+.main-navigation.toggled .menu-toggle,
+.main-navigation.toggled .menu-toggle:hover,
+.main-navigation.toggled .menu-toggle:focus {
+	background-color: $color__text-screen;
+	border-color: $color__text-screen;
+	color: #fff;
+}
+
+.main-navigation:focus {
+	outline: 0;
+}
+
+.main-navigation.toggled-on:focus {
+	outline: thin dotted;
 }
 
 @media screen and (min-width: #{$breakpoint_tablet}) {

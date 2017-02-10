@@ -6,10 +6,6 @@
 	margin-left: 0;
 }
 
-.menu-toggle {
-	margin: 0 auto;
-}
-
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
 	color: $color__link;
@@ -92,12 +88,9 @@
 
 }
 
-.site-footer .social-navigation {
-	margin-bottom: 1.75em;
-	text-align: center;
-}
-
 .jetpack-social-navigation {
+	margin-top: 1.75em;
+	text-align: center;
 
 	.menu-item {
 		margin: 0 0.4375em 0.4375em 0;

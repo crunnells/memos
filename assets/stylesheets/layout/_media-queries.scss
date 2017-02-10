@@ -178,7 +178,20 @@
 	}
 }
 
-@media screen and (min-width: 45em) {
+/**
+ * >= 600
+ */
+@media screen and (min-width: 37.5em) {
+
+	.main-navigation .nav-menu {
+		border-bottom: none;
+	}
+
+	.main-navigation li {
+		border-top: none;
+		display: inline-block;
+	}
+
 	.site-info .sep {
 		display: block;
 		line-height: 0px;

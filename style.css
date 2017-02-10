@@ -903,8 +903,12 @@ td {
   
   		*/
 }
+.main-navigation .nav-menu {
+  border-bottom: 1px solid #e9eff3;
+  margin: 0.875em 0;
+}
 .main-navigation li {
-  display: inline-block;
+  border-top: 1px solid #e9eff3;
   position: relative;
   text-align: left;
 }
@@ -932,10 +936,43 @@ td {
   display: block;
 }
 
+.menu-toggle {
+  background-color: transparent;
+  border: 1px solid #d1d1d1;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin: 1.076923077em auto;
+  padding: 0.769230769em;
+}
 .menu-toggle:before {
   content: "\2630";
   display: inline-block;
   margin-right: 5px;
+}
+.no-js .menu-toggle {
+  display: none;
+}
+.menu-toggle:hover, .menu-toggle:focus {
+  background-color: transparent;
+  border-color: #007acc;
+  color: #007acc;
+}
+
+.main-navigation.toggled .menu-toggle,
+.main-navigation.toggled .menu-toggle:hover,
+.main-navigation.toggled .menu-toggle:focus {
+  background-color: #2e4453;
+  border-color: #2e4453;
+  color: #fff;
+}
+
+.main-navigation:focus {
+  outline: 0;
+}
+
+.main-navigation.toggled-on:focus {
+  outline: thin dotted;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -951,10 +988,6 @@ td {
 .site-header-menu.toggled-on .social-navigation {
   margin-right: 0;
   margin-left: 0;
-}
-
-.menu-toggle {
-  margin: 0 auto;
 }
 
 .site-branding .site-title a:hover,
@@ -1025,11 +1058,10 @@ td {
   text-align: right;
 }
 
-.site-footer .social-navigation {
-  margin-bottom: 1.75em;
+.jetpack-social-navigation {
+  margin-top: 1.75em;
   text-align: center;
 }
-
 .jetpack-social-navigation .menu-item {
   margin: 0 0.4375em 0.4375em 0;
 }
@@ -1188,6 +1220,7 @@ body {
 .site-branding {
   width: 100%;
   text-align: center;
+  margin: 0.875em auto 0.875em 0;
 }
 .site-branding .custom-logo,
 .site-branding .site-logo {
@@ -1209,6 +1242,7 @@ body {
 
 .site-description {
   color: #3d596d;
+  display: none;
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -1219,6 +1253,11 @@ body {
 .main-navigation,
 .site-footer .social-navigation {
   text-align: center;
+}
+
+.header-image {
+  clear: both;
+  margin: 0.875em 0;
 }
 
 .site-content {
@@ -1657,7 +1696,19 @@ body {
     break-inside: avoid-column;
   }
 }
-@media screen and (min-width: 45em) {
+/**
+ * >= 600
+ */
+@media screen and (min-width: 37.5em) {
+  .main-navigation .nav-menu {
+    border-bottom: none;
+  }
+
+  .main-navigation li {
+    border-top: none;
+    display: inline-block;
+  }
+
   .site-info .sep {
     display: block;
     line-height: 0px;
