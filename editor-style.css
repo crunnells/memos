@@ -114,8 +114,16 @@ blockquote:before, blockquote:after, q:before, q:after {
 .widget-title,
 .sticky-post,
 .main-navigation,
-.page-links {
+.page-links,
+.comment-metadata,
+.pingback .edit-link,
+.comment-reply-link,
+.comment-form label {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+.form-allowed-tags code {
+  font-family: Inconsolata, monospace;
 }
 
 /* Main Text Color */

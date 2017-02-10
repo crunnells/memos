@@ -453,8 +453,16 @@ blockquote:before, blockquote:after, q:before, q:after {
 .widget-title,
 .sticky-post,
 .main-navigation,
-.page-links {
+.page-links,
+.comment-metadata,
+.pingback .edit-link,
+.comment-reply-link,
+.comment-form label {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+.form-allowed-tags code {
+  font-family: Inconsolata, monospace;
 }
 
 /* Main Text Color */
@@ -849,41 +857,72 @@ td {
   list-style: none;
   margin: 0;
   padding-left: 0;
-}
-.main-navigation ul ul {
-  background-color: rgba(245, 245, 255, 0.8);
-  border-top: 4px solid #e9eff3;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 2.156225em;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
+  		/**
+  		 * Not needed unless the theme needs to support nav menus
+  
+  		ul {
+  			background-color: $color__background-menu;
+  			border-top: 4px solid $color__border;
+  			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  			float: left;
+  			position: absolute;
+  			top: 2.156225em;
+  			left: -999em;
+  			z-index: 99999;
+  
+  			ul {
+  				left: -999em;
+  				top: 0;
+  			}
+  
+  			li {
+  				&:hover > ul,
+  				&.focus > ul {
+  					left: 100%;
+  				}
+  			}
+  
+  			a {
+  				width: 200px;
+  			}
+  
+  			:hover > a,
+  			.focus > a {
+  			}
+  
+  			a:hover,
+  			a.focus {
+  			}
+  		}
+  
+  		li:hover > ul,
+  		li.focus > ul {
+  			left: auto;
+  		}
+  
+  		*/
 }
 .main-navigation li {
   display: inline-block;
   position: relative;
   text-align: left;
 }
+.main-navigation li:hover > a, .main-navigation li.focus > a {
+  color: #007acc;
+  transition: color 0.3s;
+}
 .main-navigation a {
   display: block;
   line-height: 1.3125;
   padding: .65625em .875em;
   text-decoration: none;
+  transition: color 0.5s;
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+  color: #007acc;
 }
 
 /* Small menu. */
@@ -1637,29 +1676,30 @@ body {
   margin: 0;
   padding-left: 0;
 }
-
 .comment-list article,
 .comment-list .pingback,
 .comment-list .trackback {
   border-top: 1px solid #e9eff3;
   padding: 1.75em 0;
 }
-
+.comment-list .bypostauthor > article {
+  background-color: #f1f1f1;
+  border-top: 4px solid #d1d1d1;
+  padding: 1.75em 1.5em;
+}
 .comment-list .children {
   list-style: none;
   margin: 0;
 }
-
 .comment-list .children > li {
   padding-left: 1.5em;
 }
 
 .comment-author {
-  color: #1a1a1a;
+  color: #404040;
   margin-bottom: 0;
 }
-
-.comment-author .avatar {
+.comment-author .comment-author .avatar {
   float: left;
   height: 28px;
   margin-right: 0.875em;
@@ -1667,16 +1707,9 @@ body {
   width: 28px;
 }
 
-.bypostauthor > article .fn:after {
-  left: 3px;
-  position: relative;
-  top: 5px;
-}
-
 .comment-metadata,
 .pingback .edit-link {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -1703,7 +1736,6 @@ body {
 .pingback .edit-link {
   display: inline-block;
 }
-
 .comment-metadata .edit-link:before,
 .pingback .edit-link:before {
   display: inline-block;
@@ -1715,7 +1747,6 @@ body {
 .comment-content ol {
   margin: 0 0 1.5em 1.25em;
 }
-
 .comment-content li > ul,
 .comment-content li > ol {
   margin-bottom: 0;
@@ -1726,15 +1757,12 @@ body {
   border-radius: 2px;
   color: #007acc;
   display: inline-block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1;
   padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
-
-.comment-reply-link:hover,
-.comment-reply-link:focus {
+.comment-reply-link:hover, .comment-reply-link:focus {
   border-color: currentColor;
   color: #007acc;
   outline: 0;
@@ -1743,7 +1771,6 @@ body {
 .comment-form label {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   letter-spacing: 0.076923077em;
@@ -1774,14 +1801,9 @@ body {
   margin: 0;
   padding-top: 1.75em;
 }
-
 .comment-navigation + .no-comments {
   border-top: 0;
   padding-top: 0;
-}
-
-.form-allowed-tags code {
-  font-family: Inconsolata, monospace;
 }
 
 .form-submit {
@@ -1796,24 +1818,12 @@ body {
 .comment-reply-title small {
   font-size: 100%;
 }
-
 .comment-reply-title small a {
-  border: 0;
   float: right;
-  height: 32px;
-  overflow: hidden;
-  width: 26px;
 }
-
 .comment-reply-title small a:hover,
 .comment-reply-title small a:focus {
   color: #1a1a1a;
-}
-
-.comment-reply-title small a:before {
-  font-size: 32px;
-  position: relative;
-  top: -5px;
 }
 
 /*--------------------------------------------------------------

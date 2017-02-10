@@ -36,17 +36,12 @@ function memos_jetpack_setup() {
 	    'post-details'       => array(
 	        'stylesheet'      => 'themeslug-style', // name of the theme's stylesheet.
 	        'date'            => '.posted-on', // a CSS selector matching the elements that display the post date.
-	        'categories'      => '.cat-links', // a CSS selector matching the elements that display the post categories.
-	        'tags'            => '.tags-links', // a CSS selector matching the elements that display the post tags.
 	        'author'          => '.byline', // a CSS selector matching the elements that display the post author.
 	    ),
 	    'featured-images'    => array(
 	        'archive'         => true, // enable or not the featured image check for archive pages: true or false.
-	        'archive-default' => false, // the default setting of the featured image on archive pages, if it's being displayed or not: true or false (only required if false).
 	        'post'            => true, // enable or not the featured image check for single posts: true or false.
-	        'post-default'    => false, // the default setting of the featured image on single posts, if it's being displayed or not: true or false (only required if false).
 	        'page'            => true, // enable or not the featured image check for single pages: true or false.
-	        'page-default'    => false, // the default setting of the featured image on single pages, if it's being displayed or not: true or false (only required if false).
 	    ),
 	) );
 

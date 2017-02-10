@@ -9,6 +9,9 @@
 		margin: 0;
 		padding-left: 0;
 
+		/**
+		 * Not needed unless the theme needs to support nav menus
+
 		ul {
 			background-color: $color__background-menu;
 			border-top: 4px solid $color__border;
@@ -48,6 +51,9 @@
 		li.focus > ul {
 			left: auto;
 		}
+
+		*/
+
 	}
 
 	li {
@@ -57,6 +63,8 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: $color__link;
+			transition: color 0.3s;
 		}
 	}
 
@@ -65,12 +73,14 @@
 		line-height: 1.3125;
 		padding: .65625em .875em;
 		text-decoration: none;
+		transition: color 0.5s;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $color__link;
 	}
 }
 
