@@ -27,7 +27,7 @@ function memos_posted_on() {
 	if ( 'post' === get_post_type() && is_single() ) {
 		echo '
 		<div class="author-info">
-			<div class="author-avatar">' . get_avatar( get_the_author_meta( 'user_email' ), '42', 'mystery' ) . '</div>
+			<div class="author-avatar">' . get_avatar( get_the_author_meta( 'user_email' ), 42 ) . '</div>
 			<div class="author-description">
 				<h2 class="author-title"><span class="author-heading">Author:</span> ' . get_the_author() . '</h2>
 				<p class="author-bio">' . get_the_author_description() . ' <a class="author-link" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '">View all posts by ' .  get_the_author() . '</a></p>
@@ -53,7 +53,7 @@ function memos_posted_on() {
 
 		$byline = sprintf(
 			esc_html_x( '%s', 'post author', 'memos' ),
-			'<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), '49', 'mystery' ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"><span class="screen-reader-text">' . esc_html__( 'Author', 'memos' ) . '</span> ' . $byline . '</span>';

@@ -13,13 +13,22 @@ body {
 }
 
 .site {
-	background-color: #fff;
+	background-color: $color__background-body;
 }
 
-.site-inner {
-	margin: 0 auto;
-	max-width: 1320px;
-	position: relative;
+.site-header {
+	padding: 2.625em 7.6923%;
+}
+
+.site-branding {
+	width: 100%;
+	text-align: center;
+
+	.custom-logo,
+	.site-logo {
+		max-height: 80px;
+		width: auto;
+	}
 }
 
 .site-title {
@@ -43,13 +52,27 @@ body {
 	margin: 0.538461538em 0 0;
 }
 
+.main-navigation,
+.site-footer .social-navigation {
+	text-align: center;
+}
+
 .site-content {
+	margin: 0 auto;
+	max-width: 800px;
+	position: relative;
 	word-wrap: break-word;
 }
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
 	outline: 0;
+}
+
+.content-area {
+	float: none;
+	margin-right: 0;
+	width: 100%;
 }
 
 .site-main {
@@ -64,17 +87,12 @@ body {
 	}
 }
 
-#primary {
-	float: none;
-	margin-right: 0;
-	width: 100%;
-}
-
-#secondary {
+.widget-area {
 	float: none;
 	margin-bottom: 7em;
-	margin-left: 0;
 	padding: 0;
+	padding-left: 7.6923%;
+	padding-right: 7.6923%;
 	width: 100%;
 }
 

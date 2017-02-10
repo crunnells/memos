@@ -23,6 +23,7 @@
 }
 
 .post-navigation {
+	margin: 0 7.6923% 3.5em;
 
 	a {
 		color: $color__text-screen;
@@ -57,11 +58,6 @@
 		font-size: 28px;
 		font-size: 1.75rem;
 		line-height: 1.25;
-	}
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
 	}
 
 	.nav-next {
