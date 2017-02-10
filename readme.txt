@@ -30,7 +30,8 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 = 1.0 - [Date] =
 * Initial release
 * Added widget area below <main> content
-* Changed primary font to Merriweather (from Anonymous Pro on the demo site)
+* Added support for JetPack Content Options
+* Changed primary font (back) to Merriweather (from Anonymous Pro on the demo site)
 
 == Credits ==
 
