@@ -175,10 +175,6 @@ function memos_fonts_url() {
 	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'memos' ) ) {
 		$fonts[] = 'Montserrat:400,700';
 	}
-	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'memos' ) ) {
-		$fonts[] = 'Inconsolata:400';
-	}
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),

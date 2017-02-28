@@ -96,7 +96,7 @@ blockquote, q {
 .comment-reply-title,
 .site-footer .site-title:after,
 .post-navigation .post-title {
-  font-family: Merriweather, Georgia, serif; }
+  font-family: "Merriweather", Georgia, serif; }
 
 .meta-nav,
 .widget-title,
@@ -108,10 +108,10 @@ blockquote, q {
 .comment-reply-link,
 .comment-form label,
 .tagcloud a {
-  font-family: Montserrat, "Helvetica Neue", sans-serif; }
+  font-family: "Montserrat", "Helvetica Neue", sans-serif; }
 
 .form-allowed-tags code {
-  font-family: Inconsolata, monospace; }
+  font-family: monospace; }
 
 /* Main Text Color */
 body,
