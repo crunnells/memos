@@ -3,9 +3,9 @@
 Contributors:
 Tags:
 
-Requires at least:
-Tested up to:
-Stable tag: 1.0.0
+Requires at least: 4.6
+Tested up to: 4.7.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,10 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
 
-= 1.0 - [Date] =
+= 1.0.1 - 2017-02-28 =
+*
+
+= 1.0 - 2017-02-10 =
 * Initial release
 * Added widget area below <main> content
 * Added support for JetPack Content Options
