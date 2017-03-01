@@ -8,7 +8,7 @@ Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: memos
-Tags: one-column
+Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, editor-style, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, one-column, white
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -836,6 +836,30 @@ td {
   margin: 0;
   padding-left: 0;
 }
+.main-navigation ul ul {
+  background-color: rgba(245, 245, 255, 0.8);
+  border-top: 4px solid #e9eff3;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 2.156225em;
+  left: -999em;
+  z-index: 99999;
+}
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+  left: 100%;
+}
+.main-navigation ul ul a {
+  width: 200px;
+}
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
 .main-navigation .nav-menu {
   border-bottom: 1px solid #e9eff3;
   margin: 0.875em 0;
@@ -1155,7 +1179,6 @@ body {
   text-align: center;
   margin: 0.875em auto 0.875em 0;
 }
-.site-branding .custom-logo,
 .site-branding .site-logo {
   max-height: 80px;
   width: auto;

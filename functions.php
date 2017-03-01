@@ -52,7 +52,7 @@ function memos_setup() {
 	/**
 	 * Add support for core custom logo.
 	 */
-	add_theme_support( 'custom-logo', array(
+	add_theme_support( 'site-logo', array(
 		'height'      => 100,
 		'width'       => 100,
 		'flex-width'  => false,
@@ -74,7 +74,6 @@ function memos_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'memos_custom_background_args', array(
 		'default-color' => 'ffffff',
-		'default-image' => '',
 	) ) );
 
 	/*
@@ -119,9 +118,9 @@ function memos_the_custom_logo() {
  */
 function memos_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'memos' ),
+		'name'          => esc_html__( 'Footer', 'memos' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'   => 'This widget area is at the bottom of the page.',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -131,7 +130,7 @@ function memos_widgets_init() {
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Content Bottom', 'memos' ),
 		'id'			=> 'content-bottom',
-		'description'	=> '',
+		'description'	=> 'This widget area is below your post and page content and above the Footer widget area.',
 		'before_widget' => '<section id="%1$s" class="widget %x$s">',
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2 class="widget-title">',
@@ -167,21 +166,35 @@ function memos_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Merriweather, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'memos' ) ) {
 		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
 	}
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Montserrat, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'memos' ) ) {
 		$fonts[] = 'Montserrat:400,700';
 	}
+
 	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
+		$query_args = array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
-	return $fonts_url;
+
+	return esc_url_raw( $fonts_url );
 }
 endif;
 

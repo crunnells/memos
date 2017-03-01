@@ -22,7 +22,7 @@
 function memos_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'memos_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => '2e4453',
 		'width'                  => 2000,
 		'height'                 => 250,
 		'flex-height'            => true,
@@ -42,7 +42,7 @@ function memos_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
+	if ( HEADER_TEXTCOLOR === $header_text_color ) {
 		return;
 	}
 
@@ -51,7 +51,7 @@ function memos_header_style() {
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
+		if ( 'blank' === $header_text_color ) :
 	?>
 		.site-title,
 		.site-description {
@@ -82,7 +82,7 @@ function memos_custom_header() {
 	}
 
 	echo '<div class="header-image"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">';
-	echo '<img src="' . get_header_image() . '" width="' . esc_attr( get_custom_header()->width ) . '" height="' . esc_attr( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+	echo '<img src="' . esc_url( get_header_image() ) . '" width="' . esc_attr( get_custom_header()->width ) . '" height="' . esc_attr( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 	echo '</a></div>';
 }
 

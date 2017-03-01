@@ -18,14 +18,14 @@ function memos_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => '',
-			'border' => '',
-			'text'   => '',
-			'link'   => '',
+			'bg'     => 'ffffff',
+			'border' => 'e9eff3',
+			'text'   => '2e4453',
+			'link'   => '007acc',
 			'url'    => '',
 		);
 	}
-	
+
 	/* Add WP.com print styles */
 	add_theme_support( 'print-styles' );
 }

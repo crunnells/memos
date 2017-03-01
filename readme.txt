@@ -5,7 +5,7 @@ Tested up to: 4.7.2
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:
+Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, editor-style, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, one-column, white
 
 == Description ==
 
@@ -26,7 +26,8 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 == Changelog ==
 
 = 1.0.1 - 2017-02-28 =
-*
+* Changed header .custom-logo to .site-logo
+
 
 = 1.0 - 2017-02-10 =
 * Initial release

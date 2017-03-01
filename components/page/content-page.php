@@ -13,6 +13,11 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
+	<?php
+		if ( has_post_thumbnail() ) {
+			echo '<div class="post-thumbnail">' . get_the_post_thumbnail() . '</div>';
+		}
+	?>
 	<div class="entry-content">
 		<?php
 			the_content();

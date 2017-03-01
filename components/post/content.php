@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php
 			if ( is_sticky() ) {
-				echo '<span class="sticky-post">' . __( 'Featured', 'memos' ) . '</span>';
+				echo '<span class="sticky-post">' . esc_html__( 'Featured', 'memos' ) . '</span>';
 			}
 
 			if ( is_single() ) {
