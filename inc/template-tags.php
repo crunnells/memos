@@ -46,18 +46,11 @@ function memos_posted_on() {
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'memos' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+		$byline = '<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-		$byline = sprintf(
-			esc_html_x( '%s', 'post author', 'memos' ),
-			'<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"><span class="screen-reader-text">' . esc_html__( 'Author', 'memos' ) . '</span> ' . $byline . '</span>';
-		echo '<span class="posted-on"><span class="screen-reader-text">' . esc_html__( 'Posted on', 'memos' ) . '</span> ' . $posted_on . '</span>';
+		echo '<span class="byline"><span class="screen-reader-text">' . _x( 'Author', 'post author', 'memos' ) . '</span> ' . $byline . '</span>';
+		echo '<span class="posted-on"><span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'memos' ) . '</span> ' . $posted_on . '</span>';
 	}
 }
 endif;
