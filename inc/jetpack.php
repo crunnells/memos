@@ -30,17 +30,16 @@ function memos_jetpack_setup() {
 
 	// Add theme support for content options
 	add_theme_support( 'jetpack-content-options', array(
-	    'blog-display'			=> 'content', // the default setting of the theme: 'content', 'excerpt' or array( 'content', 'excerpt' ) for themes mixing both display.
-	    'author-bio'			=> true, // display or not the author bio: true or false.
-	    'author-bio-default'	=> true, // the default setting of the author bio, if it's being displayed or not: true or false (only required if false).
+	    'blog-display'			=> 'content',
+	    'author-bio'			=> true,
 	    'post-details'			=> array(
-	        'stylesheet'		=> 'memos-style', // name of the theme's stylesheet.
-	        'date'				=> '.posted-on', // a CSS selector matching the elements that display the post date.
-	        'author'			=> '.byline', // a CSS selector matching the elements that display the post author.
+	        'stylesheet'		=> 'memos-style',
+	        'date'				=> '.posted-on',
+	        'author'			=> '.byline',
 	    ),
 	    'featured-images'		=> array(
-	        'post'				=> true, // enable or not the featured image check for single posts: true or false.
-	        'page'				=> true, // enable or not the featured image check for single pages: true or false.
+	        'post'				=> true,
+	        'page'				=> true,
 	    ),
 	) );
 

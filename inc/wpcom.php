@@ -22,7 +22,7 @@ function memos_wpcom_setup() {
 			'border' => 'e9eff3',
 			'text'   => '2e4453',
 			'link'   => '007acc',
-			'url'    => '',
+			'url'    => '007acc',
 		);
 	}
 

@@ -22,15 +22,21 @@ get_header(); ?>
 				comments_template();
 			endif;
 
-			memos_post_navigation();
+			the_post_navigation(
+				array(
+					'prev_text'	=> '<span class="meta-nav">' . esc_html_x( 'Previous', 'previous post', 'memos' ) . '</span> <span class="post-title">%title</span>',
+					'next_text'	=> '<span class="meta-nav">' . esc_html_x( 'Next', 'next post', 'memos' ) . '</span> <span class="post-title">%title</span>',
+				)
+			);
 
 		endwhile; // End of the loop.
 		?>
 
 		</main>
 
-		<?php memos_content_bottom_widgets(); ?>
-
+		<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
+			<?php dynamic_sidebar( 'content-bottom' ); ?>
+		</aside>
 	</div>
 <?php
 get_sidebar();

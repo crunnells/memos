@@ -7,18 +7,6 @@
  * @package Memos
  */
 
-if ( ! function_exists( 'memos_content_bottom_widgets' ) ) :
-/**
- * Prints a secondary widget area in #primary below <main>
- */
-function memos_content_bottom_widgets() {
-	// check if sidebar has items before displaying
-	if ( is_active_sidebar( 'content-bottom' ) ) {
-		echo '<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">' . dynamic_sidebar( 'content-bottom' ) . '</aside>';
-	}
-}
-endif;
-
 if ( ! function_exists( 'memos_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -46,11 +34,11 @@ function memos_posted_on() {
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		$byline = '<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-		echo '<span class="byline"><span class="screen-reader-text">' . _x( 'Author', 'post author', 'memos' ) . '</span> ' . $byline . '</span>';
-		echo '<span class="posted-on"><span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'memos' ) . '</span> ' . $posted_on . '</span>';
+		echo '<span class="byline"><span class="screen-reader-text">' . esc_html_x( 'Author', 'post author', 'memos' ) . '</span> ' . $byline . '</span>';
+		echo '<span class="posted-on"><span class="screen-reader-text">' . esc_html_x( 'Posted on', 'post date', 'memos' ) . '</span> ' . $posted_on . '</span>';
 	}
 }
 endif;
@@ -75,26 +63,6 @@ function memos_entry_footer() {
 			'</span>'
 		);
 	}
-}
-endif;
-
-if ( ! function_exists( 'memos_post_navigation' ) ) :
-/**
- * Customize post navigation to include "Previous" and "Next" before nav links.
- */
-function memos_post_navigation() {
-	$navigation = '';
-	// Who knew you could change the nav links this much?
-	$previous	= get_previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . esc_html__( 'Previous', 'memos' ) . '</span> <span class="post-title">%title</span></span>' );
-	$next		= get_next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">' . esc_html__( 'Next', 'memos' ) . '</span> <span class="post-title">%title</span></span>' );
-
-	// Only add markup if there's somewhere to navigate to.
-	if ( $previous || $next ) {
-		// Wrap the links up in a nice tidy <nav> element
-		$navigation = _navigation_markup( $previous . $next, 'post-navigation' );
-	}
-
-	echo $navigation;
 }
 endif;
 

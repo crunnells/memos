@@ -32,8 +32,9 @@ get_header(); ?>
 
 		</main>
 
-		<?php memos_content_bottom_widgets(); ?>
-
+		<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
+			<?php dynamic_sidebar( 'content-bottom' ); ?>
+		</aside>
 	</div>
 <?php
 get_sidebar();
