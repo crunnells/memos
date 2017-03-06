@@ -1161,9 +1161,6 @@ body {
     padding: 0 0.53846em; }
   .entry-footer span {
     white-space: nowrap; }
-  .single .entry-footer > span:not(:first-child):before {
-    content: "";
-    padding: 0; }
 
 .sticky {
   display: block; }

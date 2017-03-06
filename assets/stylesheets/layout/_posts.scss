@@ -47,11 +47,6 @@
 	span {
 		white-space: nowrap;
 	}
-
-	.single & > span:not(:first-child):before {
-		content: "";
-		padding: 0;
-	}
 }
 
 .sticky {
