@@ -7,6 +7,61 @@
 }
 
 /**
+ * >= 400
+ */
+@media screen and (min-width: 25em) {
+
+	.nav-links {
+		a {
+			display: inline-block;
+			padding: 1.25em 0;
+		}
+
+		div {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+	.nav-next {
+		text-align: right;
+	}
+
+}
+
+/**
+ * >= 600
+ */
+@media screen and (min-width: 37.5em) {
+
+	.main-navigation .nav-menu {
+		border-bottom: none;
+	}
+
+	.main-navigation li {
+		border-top: none;
+		display: inline-block;
+	}
+
+	.site-info .sep {
+		display: block;
+		line-height: 0px;
+		visibility: hidden;
+	}
+
+	.entry-title {
+		font-size: 33px;
+		font-size: 2.0625rem;
+		line-height: 1.2727272727;
+		margin-bottom: 0.8484848485em;
+	}
+
+	.nav-links a {
+		padding: 1.75em 0;
+	}
+
+}
+
+/**
  * >= 720px
  */
 @media screen and (min-width: 45em) {
@@ -21,6 +76,11 @@
 
 	.site-header {
 		padding: 3.9375em 0;
+	}
+
+	.site-header-main {
+		margin: 0 auto;
+		max-width: 800px;
 	}
 
 	.site-branding {
@@ -88,10 +148,10 @@
 	}
 
 	.entry-title {
-		font-size: 33px;
-		font-size: 2.0625rem;
-		line-height: 1.2727272727;
-		margin-bottom: 0.8484848485em;
+		font-size: 40px;
+		font-size: 2.5rem;
+		line-height: 1.225;
+		margin-bottom: 1.05em;
 	}
 
 	.entry-content blockquote.alignleft,
@@ -100,12 +160,6 @@
 		padding: 0.9473684211em 0 0;
 		width: -webkit-calc(50% - 0.736842105em);
 		width: calc(50% - 0.736842105em);
-	}
-
-	.entry-content blockquote:not(.alignleft):not(.alignright),
-	.entry-summary blockquote,
-	.comment-content blockquote {
-		margin-left: inherit;
 	}
 
 	.entry-content li > ul,
@@ -148,7 +202,7 @@
 
 	.comments-area,
 	.widget,
-	.content-bottom-widgets .widget-area {
+	.sidebar-2-widgets .widget-area {
 		margin-bottom: 5.25em;
 	}
 
@@ -175,26 +229,5 @@
 			page-break-inside: avoid;
 			break-inside: avoid-column;
 		}
-	}
-}
-
-/**
- * >= 600
- */
-@media screen and (min-width: 37.5em) {
-
-	.main-navigation .nav-menu {
-		border-bottom: none;
-	}
-
-	.main-navigation li {
-		border-top: none;
-		display: inline-block;
-	}
-
-	.site-info .sep {
-		display: block;
-		line-height: 0px;
-		visibility: hidden;
 	}
 }

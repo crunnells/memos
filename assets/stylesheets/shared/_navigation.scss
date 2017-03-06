@@ -16,10 +16,10 @@
 	border-top: 4px solid $color__border;
 	border-bottom: 4px solid $color__border;
 	clear: both;
+	margin: 0 7.6923% 3.5em;
 }
 
 .post-navigation {
-	margin: 0 7.6923% 3.5em;
 
 	a {
 		color: $color__text-screen;
@@ -53,39 +53,39 @@
 	.post-title {
 		font-size: 28px;
 		font-size: 1.75rem;
+		font-weight: 700;
 		line-height: 1.25;
-	}
-
-	.nav-next {
-		text-align: right;
 	}
 }
 
 .posts-navigation {
-
-	.nav-links div,
-	.nav-links a {
-		display: inline-block;
-		width: 50%;
-	}
-
-	.nav-links a {
-		color: $color__text-screen;
-		font-size: 24px;
-		font-size: 1.5rem;
-		line-height: 1.25em;
-		padding: 1.75em 0;
-	}
 
 	a:hover,
 	a:focus {
 		color: $color__link;
 	}
 
-	.nav-next {
-		text-align: right;
+}
+
+.nav-links {
+
+	a {
+		color: $color__text-screen;
+		display: block;
+		font-size: 24px;
+		font-size: 1.5rem;
+		line-height: 1.25em;
+		padding: 0.625em 0;
 	}
 
+	div {
+		display: block;
+		width: 100%;
+	}
+}
+
+.nav-next {
+	text-align: left;
 }
 
 .jetpack-social-navigation {

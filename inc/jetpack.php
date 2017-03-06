@@ -18,7 +18,7 @@ function memos_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container'			=> 'main',
 		'render'			=> 'memos_infinite_scroll_render',
-		'footer_widgets'	=> array( 'sidebar-1', 'content-bottom' ) ,
+		'footer_widgets'	=> array( 'sidebar-1', 'sidebar-2' ) ,
 		'footer'			=> 'page',
 	) );
 
@@ -35,6 +35,8 @@ function memos_jetpack_setup() {
 	    'post-details'			=> array(
 	        'stylesheet'		=> 'memos-style',
 	        'date'				=> '.posted-on',
+	        'categories'		=> '.cat-links',
+	        'tags'				=> '.tag-links',
 	        'author'			=> '.byline',
 	    ),
 	    'featured-images'		=> array(

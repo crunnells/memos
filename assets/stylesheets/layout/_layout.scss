@@ -12,10 +12,6 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
-.site {
-	background-color: $color__background-body;
-}
-
 .site-header {
 	padding: 2.625em 7.6923%;
 }
@@ -61,6 +57,7 @@ body {
 .header-image {
 	clear: both;
 	margin: 0.875em 0;
+	text-align: center;
 }
 
 .site-content {

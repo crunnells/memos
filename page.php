@@ -32,8 +32,8 @@ get_header(); ?>
 
 		</main>
 
-		<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
-			<?php dynamic_sidebar( 'content-bottom' ); ?>
+		<aside id="sidebar-2-widgets" class="sidebar-2-widgets" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</aside>
 	</div>
 <?php

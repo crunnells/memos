@@ -37,6 +37,7 @@
 
 			:hover > a,
 			.focus > a {
+				background-color: $color__background-menu-hover;
 			}
 
 			a:hover,
@@ -72,7 +73,7 @@
 		line-height: 1.3125;
 		padding: .65625em .875em;
 		text-decoration: none;
-		transition: color 0.5s;
+		transition: color 0.3s;
 	}
 
 	.current_page_item > a,

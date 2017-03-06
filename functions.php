@@ -129,7 +129,7 @@ function memos_widgets_init() {
 
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Content Bottom', 'memos' ),
-		'id'			=> 'content-bottom',
+		'id'			=> 'sidebar-2',
 		'description'	=> 'This widget area is below your post and page content and above the Footer widget area.',
 		'before_widget' => '<section id="%1$s" class="widget %x$s">',
 		'after_widget'	=> '</section>',

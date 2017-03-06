@@ -8,3 +8,19 @@
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+#infinite-handle {
+	text-align: center;
+
+	span {
+		display: inline-block;
+		font-size: 16px;
+		font-size: 1rem;
+	}
+}
+
+.infinite-loader {
+	position: relative;
+	width: 36px;
+	margin: 0 auto;
+}

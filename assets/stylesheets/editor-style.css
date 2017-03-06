@@ -107,7 +107,8 @@ blockquote, q {
 .pingback .edit-link,
 .comment-reply-link,
 .comment-form label,
-.tagcloud a {
+.tagcloud a,
+#infinite-handle {
   font-family: "Montserrat", "Helvetica Neue", sans-serif; }
 
 .form-allowed-tags code {
@@ -339,39 +340,6 @@ a {
 .comment-reply-title small a:focus {
   color: #2e4453; }
 
-.entry-content a,
-.entry-summary a,
-.taxonomy-description a,
-.logged-in-as a,
-.comment-content a,
-.pingback .comment-body > a,
-.textwidget a,
-.entry-content a:hover,
-.entry-footer a:hover,
-.site-info a:hover,
-.site-footer a:hover {
-  box-shadow: 0 1px 0 0 currentColor; }
-
-.entry-content a:hover,
-.entry-content a:focus,
-.entry-summary a:hover,
-.entry-summary a:focus,
-.taxonomy-description a:hover,
-.taxonomy-description a:focus,
-.logged-in-as a:hover,
-.logged-in-as a:focus,
-.comment-content a:hover,
-.comment-content a:focus,
-.pingback .comment-body > a:hover,
-.pingback .comment-body > a:focus,
-.textwidget a:hover,
-.textwidget a:focus {
-  box-shadow: none;
-  color: #3d596d; }
-
-.entry-title a:hover {
-  color: #007acc; }
-
 a:hover,
 a:focus,
 a:active,
@@ -406,6 +374,43 @@ a:active,
 .widecolumn .mu_register label,
 .widget_calendar tbody a:hover,
 .widget_calendar tbody a:focus {
+  color: #3d596d; }
+
+.entry-title a:hover,
+.author-bio a {
+  color: #007acc; }
+
+.entry-content a,
+.entry-summary a,
+.taxonomy-description a,
+.logged-in-as a,
+.comment-content a,
+.pingback .comment-body > a,
+.textwidget a,
+.author-link,
+.entry-content a:hover,
+.entry-footer a:hover,
+.site-info a:hover,
+.site-footer a:hover {
+  box-shadow: 0 1px 0 0 currentColor; }
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus,
+.author-bio a:hover,
+.author-bio a:focus,
+.taxonomy-description a:hover,
+.taxonomy-description a:focus,
+.logged-in-as a:hover,
+.logged-in-as a:focus,
+.comment-content a:hover,
+.comment-content a:focus,
+.pingback .comment-body > a:hover,
+.pingback .comment-body > a:focus,
+.textwidget a:hover,
+.textwidget a:focus {
+  box-shadow: none;
   color: #3d596d; }
 
 /*--------------------------------------------------------------
