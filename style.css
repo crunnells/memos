@@ -269,6 +269,7 @@ th {
 # Genericons
 --------------------------------------------------------------*/
 .menu-item-has-children a:after,
+.page_item_has_children a:after,
 .menu-toggle:before,
 .dropdown-toggle:after,
 .comment-reply-title small a:before,
@@ -755,7 +756,7 @@ input[type="submit"] {
   border-radius: 2px;
   color: #fff;
   font-family: Montserrat, "Helvetica Neue", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.046875em;
   line-height: 1;
   padding: 0.84375em 0.875em 0.78125em;
@@ -939,6 +940,7 @@ td {
 .main-navigation .current-menu-ancestor > a {
   color: #007acc;
 }
+.main-navigation .page_item_has_children > a:after,
 .main-navigation .menu-item-has-children > a:after {
   content: "";
 }
@@ -1092,6 +1094,7 @@ td {
 }
 
 .posts-navigation .nav-links a {
+  color: #2e4453;
   display: block;
   font-size: 18px;
   font-size: 1.125rem;
@@ -1123,8 +1126,8 @@ td {
   border-radius: 50%;
   color: #3d596d;
   display: block;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   height: 2.25em;
   position: relative;
   width: 2.25em;
@@ -1454,7 +1457,7 @@ body {
   padding: 0 0.538461538em;
 }
 .entry-footer span {
-  line-height: 1.8461538;
+  line-height: 2.07692308;
 }
 .entry-footer span a {
   white-space: nowrap;
@@ -1487,7 +1490,6 @@ body {
 .single .byline,
 .group-blog .byline {
   display: inline-block;
-  padding-bottom: 0.538461538em;
 }
 
 .byline .avatar {
@@ -1704,6 +1706,9 @@ body {
   .posts-navigation .nav-next {
     text-align: right;
   }
+  .posts-navigation .nav-next:only-child {
+    width: 100%;
+  }
 }
 /**
  * >= 600
@@ -1749,12 +1754,14 @@ body {
   .main-navigation ul .dropdown-toggle.toggled-on {
     display: none;
   }
+  .main-navigation .page_item_has_children > a:after,
   .main-navigation .menu-item-has-children > a:after {
     content: "\f431";
     position: relative;
     left: 0.25em;
     top: 0.25em;
   }
+  .main-navigation .page_item_has_children .page_item_has_children > a:after,
   .main-navigation .menu-item-has-children .menu-item-has-children > a:after {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -2502,15 +2509,24 @@ body:not(.single) .widget-area {
   text-align: center;
 }
 #infinite-handle span {
+  border-radius: 2px;
   display: inline-block;
   font-size: 16px;
   font-size: 1rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+#infinite-handle span:hover {
+  background-color: #007acc;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .infinite-loader {
+  height: 36px;
+  margin: 0 auto;
   position: relative;
   width: 36px;
-  margin: 0 auto;
 }
 
 /*--------------------------------------------------------------

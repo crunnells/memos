@@ -13,14 +13,24 @@
 	text-align: center;
 
 	span {
+		border-radius: 2px;
 		display: inline-block;
 		font-size: 16px;
 		font-size: 1rem;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+	}
+
+	span:hover {
+		background-color: $color__link;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
 	}
 }
 
 .infinite-loader {
+	height: 36px;
+	margin: 0 auto;
 	position: relative;
 	width: 36px;
-	margin: 0 auto;
 }

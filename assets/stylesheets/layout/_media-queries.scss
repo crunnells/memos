@@ -25,6 +25,10 @@
 
 	.posts-navigation .nav-next {
 		text-align: right;
+
+		&:only-child {
+			width: 100%;
+		}
 	}
 
 }
@@ -92,6 +96,7 @@
 			}
 		}
 
+		.page_item_has_children > a:after,
 		.menu-item-has-children > a:after {
 			content: "\f431";
 			position: relative;
@@ -99,6 +104,7 @@
 			top: 0.25em;
 		}
 
+		.page_item_has_children .page_item_has_children > a:after,
 		.menu-item-has-children .menu-item-has-children > a:after {
 			-webkit-transform: rotate(-90deg);
 			-moz-transform: rotate(-90deg);

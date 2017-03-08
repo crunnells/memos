@@ -1,7 +1,7 @@
 === Memos ===
 
 Requires at least: 4.7
-Tested up to: 4.7.2
+Tested up to: 4.7.3
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -9,7 +9,13 @@ Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-
 
 == Description ==
 
-A simple single column blog theme based loosely on Twenty Sixteen and originally created by Kjell Reigstad.
+Memos is a clean, simple, clutter-free design for personal bloggers. Like it's namesake, Memos shines when used for short posts and photos. It features a one-column layout, custom header image, custom logo, and more!
+
+* Mobile-first, Responsive Layout
+* Custom Logo
+* Custom Header
+* Custom Colors
+* Social Links
 
 == Installation ==
 
@@ -21,11 +27,12 @@ A simple single column blog theme based loosely on Twenty Sixteen and originally
 
 = Does this theme support any plugins? =
 
-Memos includes support for Jetpack's Infinite Scroll as well as other features.
+Memos includes support for Jetpack's Infinite Scroll and Content Options as well as other features.
 
 == Changelog ==
 
 = 1.0.1 - 2017-03-07 =
+* Added Genericons-Neue
 * Added support for (responsive) dropdown menus in top menu
 * Added more support for Jetpack Content Options:
 	* Post Categories!
@@ -46,4 +53,4 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Genericons-Neue https://github.com/Automattic/genericons-neue/, (C) 2016-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Genericons https://github.com/Automattic/genericons/, (C) 2013-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

@@ -151,12 +151,12 @@ function memos_scripts() {
 	wp_enqueue_style( 'memos-fonts', memos_fonts_url() );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons/genericons-neue.css', array(), '4.0.5' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
 
-	//Handles toggling the navigation menu for small screens and enables TAB key navigation support for dropdown menus.
+	// Handles toggling the navigation menu for small screens and enables TAB key navigation support for dropdown menus.
 	wp_enqueue_script( 'memos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	// Helps with accessibility for keyboard only users.

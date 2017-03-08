@@ -51,6 +51,7 @@
 		color: $color__link;
 	}
 
+	.page_item_has_children > a:after,
 	.menu-item-has-children > a:after {
 		content: "";
 	}
