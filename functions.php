@@ -35,11 +35,7 @@ function memos_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'memos-featured-image', 700, 9999 );
@@ -52,11 +48,11 @@ function memos_setup() {
 	/**
 	 * Add support for core custom logo.
 	 */
-	add_theme_support( 'site-logo', array(
-		'height'      => 100,
-		'width'       => 100,
+	add_theme_support( 'custom-logo', array(
+		'height'      => 150,
+		'width'       => 500,
 		'flex-width'  => false,
-		'flex-height' => false,
+		'flex-height' => true,
 	) );
 
 	/*
@@ -94,7 +90,7 @@ add_action( 'after_setup_theme', 'memos_setup' );
  * @global int $content_width
  */
 function memos_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'memos_content_width', 700 );
+	$GLOBALS['content_width'] = apply_filters( 'memos_content_width', 676 );
 }
 add_action( 'after_setup_theme', 'memos_content_width', 0 );
 
@@ -110,6 +106,14 @@ function memos_the_custom_logo() {
 		the_custom_logo();
 	}
 }
+
+/**
+ * Author Bio Avatar Size.
+ */
+function memos_author_bio_avatar_size() {
+    return 64; // in px
+}
+add_filter( 'jetpack_author_bio_avatar_size', 'memos_author_bio_avatar_size' );
 
 /**
  * Register widget area.

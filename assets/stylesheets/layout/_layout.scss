@@ -79,14 +79,14 @@ body {
 }
 
 .site-main {
-	margin-bottom: 3.5em;
+	margin-bottom: 2.5em;
 
 	& > :last-child {
 		margin-bottom: 0;
 	}
 
 	.post {
-		margin-bottom: 7em;
+		margin-bottom: 3.5em;
 	}
 }
 
@@ -113,6 +113,12 @@ body {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
+
+	.sep {
+		display: block;
+		line-height: 0;
+		visibility: hidden;
+	}
 }
 
 /*--------------------------------------------------------------

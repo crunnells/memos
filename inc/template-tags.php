@@ -13,14 +13,8 @@ if ( ! function_exists( 'memos_posted_on' ) ) :
  */
 function memos_posted_on() {
 	if ( 'post' === get_post_type() && is_single() ) {
-		echo '
-		<div class="author-info">
-			<div class="author-avatar">' . get_avatar( get_the_author_meta( 'user_email' ), 64 ) . '</div>
-			<div class="author-description">
-				<h2 class="author-title"><span class="author-heading">' . esc_html__( 'Author', 'memos' ) . ':</span> ' . get_the_author() . '</h2>
-				<p class="author-bio">' . get_the_author_meta( 'description' ) . ' <a class="author-link" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '">View all posts by ' .  get_the_author() . '</a></p>
-			</div>
-		</div>';
+		// see Jetpack functions
+		memos_author_bio();
 	} else {
 		echo '
 		<span class="byline">
@@ -64,12 +58,13 @@ function memos_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'memos' ) );
 		if ( $categories_list && memos_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'memos' ) . '</span>', $categories_list );
+			echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html_x( 'Posted in', 'post categories', 'memos' ) . '</span> ' . $categories_list . '</span>';
 		}
+
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'components' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'memos' ) . '</span>', $tags_list );
+			echo '<span class="tags-links"><span class="screen-reader-text">' . esc_html_x( 'Tagged', 'post tags', 'memos' ) . ':</span> ' . $tags_list . '</span>';
 		}
 	}
 

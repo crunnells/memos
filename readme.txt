@@ -25,9 +25,16 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
 
-= 1.0.1 - 2017-02-28 =
-* Changed header .custom-logo to .site-logo
-
+= 1.0.1 - 2017-03-07 =
+* Added support for (responsive) dropdown menus in top menu
+* Added more support for Jetpack Content Options:
+	* Post Categories!
+	* Post Tags!
+	* Author Bio on single posts! (It was already there, but now it's removable!)
+* Changed about a million things after the initial theme review.
+* Changed out navigation.js (ala components) for Twenty Sixteen's header menu JS
+* Changed custom logo size to be more flexible
+* Removed a few large piles of unused CSS
 
 = 1.0 - 2017-02-10 =
 * Initial release
@@ -39,3 +46,4 @@ Memos includes support for Jetpack's Infinite Scroll as well as other features.
 
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Genericons-Neue https://github.com/Automattic/genericons-neue/, (C) 2016-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

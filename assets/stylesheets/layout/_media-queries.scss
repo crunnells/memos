@@ -107,10 +107,12 @@
 		}
 	}
 
-	.site-info .sep {
-		display: block;
-		line-height: 0px;
-		visibility: hidden;
+	.site-main {
+		margin-bottom: 3.5em;
+	}
+
+	.site-main .post {
+		margin-bottom: 5.25em;
 	}
 
 	.entry-title {
@@ -134,14 +136,30 @@
 		margin-bottom: 0.25em;
 	}
 
-
-	.author-info {
+	.author-info,
+	.entry-author {
 		border-bottom-width: 0;
 		padding-bottom: 0;
+		margin-bottom: 1.75em;
+	}
+
+	.author-avatar .avatar {
+		height: 48px;
+		margin: 0 1.25em 1.25em 0;
+		width: 48px;
+	}
+
+	.author-description {
+		min-height: 42px;
 	}
 
 	.nav-links a {
 		padding: 1em 0;
+	}
+
+	.site-info .sep {
+		display: inline;
+		visibility: visible;
 	}
 
 }
@@ -203,6 +221,10 @@
 
 	.header-image {
 		margin: 1.3125em 0;
+	}
+
+	.site-main .post {
+		margin-bottom: 7em;
 	}
 
 	.pagination {
@@ -276,6 +298,22 @@
 	.entry-summary blockquote > ol,
 	.comment-content blockquote > ol {
 		margin-left: 1.5em;
+	}
+
+	.author-info,
+	.entry-author {
+		margin-bottom: 1.75em;
+	}
+
+	.author-avatar .avatar {
+		float: left;
+		height: 64px;
+		margin: 0 1.75em 1.75em 0;
+		width: 64px;
+	}
+
+	.author-description {
+		min-height: 85px;
 	}
 
 	.comment-author {

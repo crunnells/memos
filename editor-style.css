@@ -263,7 +263,8 @@ blockquote,
 .page-links a,
 .comments-title,
 .comment-reply-title,
-#jp-post-flair + .author-info {
+#jp-post-flair + .author-info,
+#jp-post-flair + .entry-author {
   border-color: #e9eff3;
 }
 

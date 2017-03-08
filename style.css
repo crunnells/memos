@@ -643,7 +643,8 @@ blockquote,
 .page-links a,
 .comments-title,
 .comment-reply-title,
-#jp-post-flair + .author-info {
+#jp-post-flair + .author-info,
+#jp-post-flair + .entry-author {
   border-color: #e9eff3;
 }
 
@@ -1333,13 +1334,13 @@ body {
 }
 
 .site-main {
-  margin-bottom: 3.5em;
+  margin-bottom: 2.5em;
 }
 .site-main > :last-child {
   margin-bottom: 0;
 }
 .site-main .post {
-  margin-bottom: 7em;
+  margin-bottom: 3.5em;
 }
 
 .widget-area {
@@ -1364,6 +1365,11 @@ body {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
+}
+.site-info .sep {
+  display: block;
+  line-height: 0;
+  visibility: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -1448,6 +1454,9 @@ body {
   padding: 0 0.538461538em;
 }
 .entry-footer span {
+  line-height: 1.8461538;
+}
+.entry-footer span a {
   white-space: nowrap;
 }
 
@@ -1487,7 +1496,8 @@ body {
   width: 21px;
 }
 
-.author-info {
+.author-info,
+.entry-author {
   border-color: #e9eff3;
   border-style: solid;
   border-width: 1px 0 1px 0;
@@ -1499,7 +1509,9 @@ body {
 
 .author-avatar .avatar {
   float: left;
-  margin: 0 1.75em 1.75em 0;
+  height: 32px;
+  margin: 0 1em 1em 0;
+  width: 32px;
 }
 
 .author-title {
@@ -1507,6 +1519,10 @@ body {
   font-size: 1rem;
   line-height: 1.75;
   margin: 0;
+}
+
+.author-description {
+  min-height: 42px;
 }
 
 .author-description > :last-child {
@@ -1536,9 +1552,7 @@ body {
   clear: both;
   margin: 0 0 1.75em;
 }
-
-.page-links a,
-.page-links > span {
+.page-links a, .page-links > span {
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   display: inline-block;
@@ -1550,7 +1564,6 @@ body {
   text-align: center;
   width: 1.8461538462em;
 }
-
 .page-links a,
 .page-links a:link {
   background-color: #e6e6e6;
@@ -1558,14 +1571,12 @@ body {
   color: #2e4453;
   box-shadow: none;
 }
-
 .page-links a:hover,
 .page-links a:focus {
   background-color: #007acc;
   border-color: transparent;
   color: #fff;
 }
-
 .page-links > .page-links-title {
   border: 0;
   color: #d1d1d1;
@@ -1751,10 +1762,12 @@ body {
     transform: rotate(-90deg);
   }
 
-  .site-info .sep {
-    display: block;
-    line-height: 0px;
-    visibility: hidden;
+  .site-main {
+    margin-bottom: 3.5em;
+  }
+
+  .site-main .post {
+    margin-bottom: 5.25em;
   }
 
   .entry-title {
@@ -1778,13 +1791,30 @@ body {
     margin-bottom: 0.25em;
   }
 
-  .author-info {
+  .author-info,
+  .entry-author {
     border-bottom-width: 0;
     padding-bottom: 0;
+    margin-bottom: 1.75em;
+  }
+
+  .author-avatar .avatar {
+    height: 48px;
+    margin: 0 1.25em 1.25em 0;
+    width: 48px;
+  }
+
+  .author-description {
+    min-height: 42px;
   }
 
   .nav-links a {
     padding: 1em 0;
+  }
+
+  .site-info .sep {
+    display: inline;
+    visibility: visible;
   }
 }
 /**
@@ -1844,6 +1874,10 @@ body {
 
   .header-image {
     margin: 1.3125em 0;
+  }
+
+  .site-main .post {
+    margin-bottom: 7em;
   }
 
   .pagination {
@@ -1915,6 +1949,22 @@ body {
   .entry-summary blockquote > ol,
   .comment-content blockquote > ol {
     margin-left: 1.5em;
+  }
+
+  .author-info,
+  .entry-author {
+    margin-bottom: 1.75em;
+  }
+
+  .author-avatar .avatar {
+    float: left;
+    height: 64px;
+    margin: 0 1.75em 1.75em 0;
+    width: 64px;
+  }
+
+  .author-description {
+    min-height: 85px;
   }
 
   .comment-author {
@@ -2329,21 +2379,6 @@ body:not(.single) .widget-area {
   border-color: #007acc;
   color: #007acc;
   outline: 0;
-}
-
-/* Search widget */
-.widget_search {
-  /*
-  	.search-field {
-  		width: 60%;
-  	}
-  
-  	.search-submit {
-  		font-weight: 400;
-  		padding: 0.84375em 0.6125em 0.78125em;
-  		max-width: 40%;
-  	}
-  */
 }
 
 /* Goodreads widget */

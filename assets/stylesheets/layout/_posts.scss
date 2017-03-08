@@ -79,6 +79,10 @@
 	}
 
 	span {
+		line-height: 1.8461538;
+	}
+
+	span a {
 		white-space: nowrap;
 	}
 }
@@ -119,7 +123,8 @@
 	width: 21px;
 }
 
-.author-info {
+.author-info,
+.entry-author {
 	border-color: $color__border;
 	border-style: solid;
 	border-width: 1px 0 1px 0;
@@ -131,7 +136,9 @@
 
 .author-avatar .avatar {
 	float: left;
-	margin: 0 1.75em 1.75em 0;
+	height: 32px;
+	margin: 0 1em 1em 0;
+	width: 32px;
 }
 
 .author-title {
@@ -139,6 +146,10 @@
 	font-size: 1rem;
 	line-height: 1.75;
 	margin: 0;
+}
+
+.author-description {
+	min-height: 42px;
 }
 
 .author-description > :last-child {
@@ -167,44 +178,44 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.75em;
-}
 
-.page-links a,
-.page-links > span {
-	border: 1px solid $color__border-alt;
-	border-radius: 2px;
-	display: inline-block;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	height: 1.8461538462em;
-	line-height: 1.6923076923em;
-	margin-right: 0.3076923077em;
-	text-align: center;
-	width: 1.8461538462em;
-}
+	a,
+	& > span {
+		border: 1px solid $color__border-alt;
+		border-radius: 2px;
+		display: inline-block;
+		font-size: 13px;
+		font-size: 0.8125rem;
+		height: 1.8461538462em;
+		line-height: 1.6923076923em;
+		margin-right: 0.3076923077em;
+		text-align: center;
+		width: 1.8461538462em;
+	}
 
-.page-links a,
-.page-links a:link {
-	background-color: $color__background-button;
-	border-color: $color__background-button;
-	color: $color__text-screen;
-	box-shadow: none;
-}
+	a,
+	a:link {
+		background-color: $color__background-button;
+		border-color: $color__background-button;
+		color: $color__text-screen;
+		box-shadow: none;
+	}
 
-.page-links a:hover,
-.page-links a:focus {
-	background-color: $color__link;
-	border-color: transparent;
-	color: #fff;
-}
+	a:hover,
+	a:focus {
+		background-color: $color__link;
+		border-color: transparent;
+		color: #fff;
+	}
 
-.page-links > .page-links-title {
-	border: 0;
-	color: $color__border-alt;
-	height: auto;
-	margin: 0;
-	padding-right: 0.6153846154em;
-	width: auto;
+	& > .page-links-title {
+		border: 0;
+		color: $color__border-alt;
+		height: auto;
+		margin: 0;
+		padding-right: 0.6153846154em;
+		width: auto;
+	}
 }
 
 .entry-attachment {

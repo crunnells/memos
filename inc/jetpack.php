@@ -69,3 +69,14 @@ function memos_social_menu() {
 		jetpack_social_menu();
 	}
 }
+
+/**
+ * Uses jetpack_author_bio function if available with a fallback if not.
+ */
+function memos_author_bio() {
+	if ( ! function_exists( 'jetpack_author_bio' ) ) {
+		get_template_part( 'components/post/content', 'author' );
+	} else {
+		jetpack_author_bio();
+	}
+}
