@@ -11,7 +11,7 @@
  */
 @media screen and (min-width: 25em) {
 
-	.nav-links {
+	.posts-navigation .nav-links {
 		a {
 			display: inline-block;
 			padding: 1.25em 0;
@@ -22,7 +22,8 @@
 			width: 50%;
 		}
 	}
-	.nav-next {
+
+	.posts-navigation .nav-next {
 		text-align: right;
 	}
 
@@ -55,8 +56,13 @@
 		margin-bottom: 0.8484848485em;
 	}
 
+	.author-info {
+		border-bottom-width: 0;
+		padding-bottom: 0;
+	}
+
 	.nav-links a {
-		padding: 1.75em 0;
+		padding: 1em 0;
 	}
 
 }
@@ -201,9 +207,33 @@
 	}
 
 	.comments-area,
-	.widget,
-	.sidebar-2-widgets .widget-area {
+	.widget-area,
+	.widget {
 		margin-bottom: 5.25em;
+	}
+
+	.widget-area {
+		@include column-count(2);
+		@include column-gap(52px);
+
+		.widget {
+			@include break-inside(avoid);
+		}
+	}
+
+	.sidebar-2-widgets {
+		@include column-count(1);
+
+		.widget_authors > ul > li {
+			float: left;
+			margin-right: 4%;
+			width: 48%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
 	}
 
 	body:not(.search-results) .entry-summary li > ul,
@@ -216,18 +246,4 @@
 		margin-left: 1.473684211em;
 	}
 
-	.widget-area {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-		-webkit-column-gap: 52px;
-		-moz-column-gap: 52px;
-		column-gap: 52px;
-
-		.widget-area section {
-			-webkit-column-break-inside: avoid;
-			page-break-inside: avoid;
-			break-inside: avoid-column;
-		}
-	}
 }

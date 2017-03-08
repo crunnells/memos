@@ -120,7 +120,7 @@ function memos_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'memos' ),
 		'id'            => 'sidebar-1',
-		'description'   => 'This widget area is at the bottom of the page.',
+		'description'   => 'This widget area is at the bottom of the page and displays widgets in two columns.',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -130,8 +130,8 @@ function memos_widgets_init() {
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Content Bottom', 'memos' ),
 		'id'			=> 'sidebar-2',
-		'description'	=> 'This widget area is below your post and page content and above the Footer widget area.',
-		'before_widget' => '<section id="%1$s" class="widget %x$s">',
+		'description'	=> 'This widget area is below your post and page content and above the Footer widget area in a single column.',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	=> '</h2>',

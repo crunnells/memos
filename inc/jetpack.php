@@ -34,10 +34,10 @@ function memos_jetpack_setup() {
 	    'author-bio'			=> true,
 	    'post-details'			=> array(
 	        'stylesheet'		=> 'memos-style',
-	        'date'				=> '.posted-on',
+	        'author'			=> '.byline, .byline:after',
+	        'date'				=> '.posted-on, .posted-on:after',
 	        'categories'		=> '.cat-links',
-	        'tags'				=> '.tag-links',
-	        'author'			=> '.byline',
+	        'tags'				=> '.tags-links, .tags-links:after',
 	    ),
 	    'featured-images'		=> array(
 	        'post'				=> true,

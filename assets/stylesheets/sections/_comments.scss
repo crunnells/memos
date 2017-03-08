@@ -53,7 +53,7 @@
 	color: $color__text-main;
 	margin-bottom: 0;
 
-	.comment-author .avatar {
+	.avatar {
 		float: left;
 		height: 28px;
 		margin-right: 0.875em;
@@ -72,7 +72,7 @@
 
 .comment-metadata {
 	margin-bottom: 2.1538461538em;
-	margin-left: 3.625em;
+	margin-left: 2.625em;
 }
 
 .comment-metadata a,
@@ -92,6 +92,7 @@
 	display: inline-block;
 
 	&:before {
+		content: "\002f";
 		display: inline-block;
 		opacity: 0.7;
 		padding: 0 0.538461538em;
@@ -129,7 +130,7 @@
 }
 
 .comment-form label {
-	color: #686868;
+	color: $color__text-tertiary;
 	display: block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -147,7 +148,7 @@
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-	color: #686868;
+	color: $color__text-tertiary;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -155,8 +156,7 @@
 }
 
 .no-comments {
-	border-top: 1px solid #d1d1d1;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	border-top: 1px solid $color__border-alt;
 	font-weight: 700;
 	margin: 0;
 	padding-top: 1.75em;
@@ -173,11 +173,11 @@
 
 .required {
 	color: $color__link;
-	font-family: Merriweather, Georgia, serif;
 }
 
 .comment-reply-title small {
-	font-size: 100%;
+	font-size: 16px;
+	font-size: 1rem;
 
 	a {
 		float: right;
@@ -187,5 +187,4 @@
 	a:focus {
 		color: #1a1a1a;
 	}
-
 }

@@ -1,3 +1,37 @@
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6,
+.textwidget h4,
+.textwidget h5,
+.textwidget h6 {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.3125;
+	margin-top: 3.5em;
+	margin-bottom: 1.75em;
+}
+
+.entry-content h4,
+.entry-summary h4,
+.comment-content h4,
+.textwidget h4 {
+	letter-spacing: 0.140625em;
+	text-transform: uppercase;
+}
+
+.entry-content h6,
+.entry-summary h6,
+.comment-content h6,
+.textwidget h6 {
+	font-style: italic;
+}
+
 .entry-header,
 .entry-summary,
 .entry-content,
@@ -36,6 +70,7 @@
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
+	margin-top: 2.1538461538em;
 
 	& > span:not(:last-child):after {
 		content: "\002f";
@@ -90,15 +125,14 @@
 	border-style: solid;
 	border-width: 1px 0 1px 0;
 	clear: both;
+	margin-bottom: 1em;
 	padding-top: 1.75em;
 	padding-bottom: 1.75em;
 }
 
 .author-avatar .avatar {
 	float: left;
-	height: 42px;
-	margin: 0.375em 1.75em 1.75em 0;
-	width: 42px;
+	margin: 0 1.75em 1.75em 0;
 }
 
 .author-title {
@@ -190,3 +224,62 @@
 .entry-caption > :last-child {
 	margin-bottom: 0;
 }
+
+.post-password-form {
+	margin-bottom: 1.75em;
+
+	label {
+		color: $color__text-tertiary;
+		display: inline-block;
+		font-size: 13px;
+		font-size: 0.8125rem;
+		letter-spacing: 0.076923077em;
+		line-height: 1.6153846154;
+		margin-bottom: 1.75em;
+		text-transform: uppercase;
+	}
+
+	input[type="password"] {
+		margin-top: 0.4375em;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.image-navigation,
+.comment-navigation {
+	color: $color__text-tertiary;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.6153846154;
+	margin: 0 7.6923% 2.1538461538em;
+	padding: 1.0769230769em 0;
+}
+
+.comment-navigation {
+	margin-right: 0;
+	margin-left: 0;
+
+	.comments-title + & {
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+.image-navigation .nav-previous:not(:empty),
+.image-navigation .nav-next:not(:empty),
+.comment-navigation .nav-previous:not(:empty),
+.comment-navigation .nav-next:not(:empty) {
+	display: inline-block;
+}
+
+.image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before,
+.comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before {
+	content: "\002f";
+	display: inline-block;
+	opacity: 0.7;
+	padding: 0 0.538461538em;
+}
+

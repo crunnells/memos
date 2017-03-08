@@ -98,6 +98,13 @@ body {
 	padding-right: 7.6923%;
 	width: 100%;
 }
+.content-area:after {
+	border-top: 4px solid $color__border;
+	content: "";
+	display: block;
+	height: 4px;
+	margin: 0 7.6923%;
+}
 
 .site-footer {
 	padding: 0 7.6923% 1.75em;

@@ -87,7 +87,8 @@ blockquote, q {
 .comments-title,
 .comment-reply-title,
 .site-footer .site-title:after,
-.post-navigation .post-title {
+.post-navigation .post-title,
+.required {
 	font-family: "Merriweather", Georgia, serif;
 }
 
@@ -95,11 +96,15 @@ blockquote, q {
 .widget-title,
 .sticky-post,
 .main-navigation,
+.post-password-form label,
 .page-links,
+.image-navigation,
+.comment-navigation,
 .comment-metadata,
 .pingback .edit-link,
 .comment-reply-link,
 .comment-form label,
+.no-comments,
 .tagcloud a,
 #infinite-handle {
 	font-family: "Montserrat", "Helvetica Neue", sans-serif;

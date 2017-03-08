@@ -17,6 +17,23 @@
 	border-bottom: 4px solid $color__border;
 	clear: both;
 	margin: 0 7.6923% 3.5em;
+
+	.nav-links {
+
+		a {
+			color: $color__text-screen;
+			display: block;
+			font-size: 24px;
+			font-size: 1.5rem;
+			line-height: 1.25em;
+			padding: 0.625em 0;
+		}
+
+		div {
+			display: block;
+			width: 100%;
+		}
+	}
 }
 
 .post-navigation {
@@ -67,22 +84,6 @@
 
 }
 
-.nav-links {
-
-	a {
-		color: $color__text-screen;
-		display: block;
-		font-size: 24px;
-		font-size: 1.5rem;
-		line-height: 1.25em;
-		padding: 0.625em 0;
-	}
-
-	div {
-		display: block;
-		width: 100%;
-	}
-}
 
 .nav-next {
 	text-align: left;
@@ -93,22 +94,24 @@
 	text-align: center;
 
 	.menu-item {
-		margin: 0 0.4375em 0.4375em 0;
+		margin: 0 0.75em 0.75em 0;
 
 		a {
 			border: 1px solid $color__border;
 			border-radius: 50%;
 			color: $color__link-hover;
 			display: block;
+			font-size: 20px;
+			font-size: 1.25rem;
 			height: 2.25em;
 			position: relative;
 			width: 2.25em;
 		}
 
 		a:before {
-			line-height: 2.0625em;
-			height: 2.0625em;
-			width: 2.0625em;
+			line-height: 2.15em;
+			height: 2.15em;
+			width: 2.15em;
 		}
 
 		a:hover {

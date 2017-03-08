@@ -22,3 +22,22 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin break-inside($value) {
+	-webkit-column-break-inside: $value;
+    page-break-inside: $value;
+    break-inside: $value;
+}
+
+@mixin column-count($value) {
+	-webkit-column-count: $value;
+	-moz-column-count: $value;
+	column-count: $value;
+}
+
+@mixin column-gap($value) {
+	-webkit-column-gap: $value;
+	-moz-column-gap: $value;
+	column-gap: $value;
+
+}
