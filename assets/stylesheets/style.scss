@@ -24,6 +24,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Genericons
 # Accessibility
 # Alignments
 # Clearings
@@ -53,6 +54,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 @import "shared/normalize";
+
+/*--------------------------------------------------------------
+# Genericons
+--------------------------------------------------------------*/
+@import "shared/genericons";
 
 /*--------------------------------------------------------------
 # Accessibility

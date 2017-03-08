@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Genericons
 # Accessibility
 # Alignments
 # Clearings
@@ -152,7 +153,7 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 hr {
@@ -262,6 +263,65 @@ table {
 td,
 th {
   padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Genericons
+--------------------------------------------------------------*/
+.menu-item-has-children a:after,
+.dropdown-toggle:after,
+.comment-reply-title small a:before,
+.search-submit:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: "Genericons";
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none;
+  vertical-align: top;
+}
+
+.main-navigation .menu-item-has-children > a:after {
+  content: "\f431";
+  position: relative;
+  left: 0.25em;
+  top: 0.25em;
+}
+
+.dropdown-toggle:after {
+  border-left-width: 1px;
+  content: "\f431";
+  font-size: 24px;
+  left: 1px;
+  position: relative;
+  width: 48px;
+}
+
+.dropdown-toggle.toggled-on:after {
+  content: "\f432";
+}
+
+.comment-reply-title small a:before {
+  content: "\f405";
+  font-size: 32px;
+  position: relative;
+  top: -5px;
+}
+
+.search-submit:before {
+  content: "\f400";
+  font-size: 24px;
+  left: 2px;
+  line-height: 42px;
+  position: relative;
+  width: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -678,6 +738,27 @@ input[type="color"] {
 textarea {
   padding-left: 3px;
   width: 100%;
+}
+
+.search-form {
+  position: relative;
+}
+
+input[type="search"].search-field {
+  border-radius: 2px 0 0 2px;
+  width: -webkit-calc(100% - 42px);
+  width: calc(100% - 42px);
+}
+
+.search-submit {
+  border-radius: 0 2px 2px 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 42px;
 }
 
 /*--------------------------------------------------------------
@@ -1583,11 +1664,6 @@ body {
   margin-left: 7.6923%;
 }
 
-.error-404 .search-field,
-.no-results .search-field {
-  width: 80%;
-}
-
 /*--------------------------------------------------------------
 ## Media Queries
 --------------------------------------------------------------*/
@@ -2174,13 +2250,19 @@ body:not(.single) .widget-area {
   outline: 0;
 }
 
-.widget_search .search-field {
-  width: 60%;
-}
-.widget_search .search-submit {
-  font-weight: 400;
-  padding: 0.84375em 0.6125em 0.78125em;
-  max-width: 40%;
+/* Search widget */
+.widget_search {
+  /*
+  	.search-field {
+  		width: 60%;
+  	}
+  
+  	.search-submit {
+  		font-weight: 400;
+  		padding: 0.84375em 0.6125em 0.78125em;
+  		max-width: 40%;
+  	}
+  */
 }
 
 /* Goodreads widget */

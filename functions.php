@@ -146,6 +146,9 @@ function memos_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'memos-fonts', memos_fonts_url() );
 
+	// Add Genericons, used in the main stylesheet.
+	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons/genericons-neue.css', array(), '4.0.5' );
+
 	// Theme stylesheet.
 	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
 
