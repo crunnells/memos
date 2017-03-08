@@ -19,42 +19,6 @@
 	vertical-align: top;
 }
 
-.main-navigation .menu-item-has-children > a:after {
-	content: "\f431";
-	position: relative;
-	left: 0.25em;
-	top: 0.25em;
-}
-
-.menu-toggle:before {
-	content: "\f419";
-	display: inline-block;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	margin-right: 5px;
-
-	.toggled & {
-		content: "\f406";
-		font-size: 11px;
-		position: relative;
-		top: 1px;
-		left: -1px;
-	}
-}
-
-.dropdown-toggle:after {
-	border-left-width: 1px;
-	content: "\f431";
-	font-size: 24px;
-	left: 1px;
-	position: relative;
-	width: 48px;
-}
-
-.dropdown-toggle.toggled:after {
-	content: "\f432";
-}
-
 .comment-reply-title small a:before {
 	content: "\f405";
 	font-size: 32px;

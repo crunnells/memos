@@ -39,10 +39,8 @@ if ( post_password_required() ) {
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'memos' ); ?></h2>
 			<div class="nav-links">
-
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'memos' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'memos' ) ); ?></div>
-
 			</div>
 		</nav>
 		<?php endif; // Check for comment navigation. ?>

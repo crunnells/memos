@@ -1,86 +1,196 @@
+/* global screenReaderText */
 /**
- * File navigation.js.
+ * Theme functions file.
  *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
+ * Contains handlers for navigation and widget area.
  */
-( function() {
-	var container, button, menu, links, subMenus, i, len;
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
+( function( $ ) {
+	var body, masthead, menuToggle, siteNavigation, siteHeaderMenu, resizeTimer;
+
+	function initMainNavigation( container ) {
+
+		// Add dropdown toggle that displays child menu items.
+		var dropdownToggle = $( '<button />', {
+			'class': 'dropdown-toggle',
+			'aria-expanded': false
+		} ).append( $( '<span />', {
+			'class': 'screen-reader-text',
+			text: screenReaderText.expand
+		} ) );
+
+		container.find( '.menu-item-has-children > a' ).after( dropdownToggle );
+
+		// Toggle buttons and submenu items with active children menu items.
+		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
+		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+
+		// Add menu items with submenus to aria-haspopup="true".
+		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
+
+		container.find( '.dropdown-toggle' ).click( function( e ) {
+			var _this            = $( this ),
+				screenReaderSpan = _this.find( '.screen-reader-text' );
+
+			e.preventDefault();
+			_this.toggleClass( 'toggled-on' );
+			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+
+			// jscs:disable
+			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			// jscs:enable
+			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+		} );
 	}
+	initMainNavigation( $( '.main-navigation' ) );
 
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
+	masthead         = $( '#masthead' );
+	menuToggle       = masthead.find( '.menu-toggle' );
+	siteHeaderMenu   = masthead.find( '#site-header-menu' );
+	siteNavigation   = masthead.find( '#site-navigation' );
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	// Enable menuToggle.
+	( function() {
 
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
-
-	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
-
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
+		// Return early if menuToggle is missing.
+		if ( ! menuToggle.length ) {
+			return;
 		}
-	};
 
-	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
-	subMenus = menu.getElementsByTagName( 'ul' );
+		// Add an initial values for the attribute.
+		menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
 
-	// Set menu items with submenus to aria-haspopup="true".
-	for ( i = 0, len = subMenus.length; i < len; i++ ) {
-		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
-	}
+		menuToggle.on( 'click.twentysixteen', function() {
+			$( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
 
-	// I suppose this is the point where I should create buttons to toggle open the sub-menus
+			// jscs:disable
+			$( this ).add( siteNavigation ).attr( 'aria-expanded', $( this ).add( siteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			// jscs:enable
+		} );
+	} )();
 
+	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	( function() {
+		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+			return;
+		}
 
+		// Toggle `focus` class to allow submenu access on tablets.
+		function toggleFocusClassTouchScreen() {
+			if ( window.innerWidth >= 910 ) {
+				$( document.body ).on( 'touchstart.twentysixteen', function( e ) {
+					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+						$( '.main-navigation li' ).removeClass( 'focus' );
+					}
+				} );
+				siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.twentysixteen', function( e ) {
+					var el = $( this ).parent( 'li' );
 
+					if ( ! el.hasClass( 'focus' ) ) {
+						e.preventDefault();
+						el.toggleClass( 'focus' );
+						el.siblings( '.focus' ).removeClass( 'focus' );
+					}
+				} );
+			} else {
+				siteNavigation.find( '.menu-item-has-children > a' ).unbind( 'touchstart.twentysixteen' );
+			}
+		}
 
-	// Each time a menu link is focused or blurred, toggle focus.
-	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
-	}
+		if ( 'ontouchstart' in window ) {
+			$( window ).on( 'resize.twentysixteen', toggleFocusClassTouchScreen );
+			toggleFocusClassTouchScreen();
+		}
 
-	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus() {
-		var self = this;
+		siteNavigation.find( 'a' ).on( 'focus.twentysixteen blur.twentysixteen', function() {
+			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
+		} );
+	} )();
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
+	// Add the default ARIA attributes for the menu toggle and the navigations.
+	function onResizeARIA() {
+		if ( window.innerWidth < 910 ) {
+			if ( menuToggle.hasClass( 'toggled-on' ) ) {
+				menuToggle.attr( 'aria-expanded', 'true' );
+			} else {
+				menuToggle.attr( 'aria-expanded', 'false' );
 			}
 
-			self = self.parentElement;
+			if ( siteHeaderMenu.hasClass( 'toggled-on' ) ) {
+				siteNavigation.attr( 'aria-expanded', 'true' );
+			} else {
+				siteNavigation.attr( 'aria-expanded', 'false' );
+			}
+
+			menuToggle.attr( 'aria-controls', 'site-navigation social-navigation' );
+		} else {
+			menuToggle.removeAttr( 'aria-expanded' );
+			siteNavigation.removeAttr( 'aria-expanded' );
+			menuToggle.removeAttr( 'aria-controls' );
 		}
 	}
-} )();
+
+	// Add 'below-entry-meta' class to elements.
+	function belowEntryMetaClass( param ) {
+		if ( body.hasClass( 'page' ) || body.hasClass( 'search' ) || body.hasClass( 'single-attachment' ) || body.hasClass( 'error404' ) ) {
+			return;
+		}
+
+		$( '.entry-content' ).find( param ).each( function() {
+			var element              = $( this ),
+				elementPos           = element.offset(),
+				elementPosTop        = elementPos.top,
+				entryFooter          = element.closest( 'article' ).find( '.entry-footer' ),
+				entryFooterPos       = entryFooter.offset(),
+				entryFooterPosBottom = entryFooterPos.top + ( entryFooter.height() + 28 ),
+				caption              = element.closest( 'figure' ),
+				newImg;
+
+			// Add 'below-entry-meta' to elements below the entry meta.
+			if ( elementPosTop > entryFooterPosBottom ) {
+
+				// Check if full-size images and captions are larger than or equal to 840px.
+				if ( 'img.size-full' === param ) {
+
+					// Create an image to find native image width of resized images (i.e. max-width: 100%).
+					newImg = new Image();
+					newImg.src = element.attr( 'src' );
+
+					$( newImg ).on( 'load.twentysixteen', function() {
+						if ( newImg.width >= 840  ) {
+							element.addClass( 'below-entry-meta' );
+
+							if ( caption.hasClass( 'wp-caption' ) ) {
+								caption.addClass( 'below-entry-meta' );
+								caption.removeAttr( 'style' );
+							}
+						}
+					} );
+				} else {
+					element.addClass( 'below-entry-meta' );
+				}
+			} else {
+				element.removeClass( 'below-entry-meta' );
+				caption.removeClass( 'below-entry-meta' );
+			}
+		} );
+	}
+
+	$( document ).ready( function() {
+		body = $( document.body );
+
+		$( window )
+			.on( 'load.twentysixteen', onResizeARIA )
+			.on( 'resize.twentysixteen', function() {
+				clearTimeout( resizeTimer );
+				resizeTimer = setTimeout( function() {
+					belowEntryMetaClass( 'img.size-full' );
+					belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+				}, 300 );
+				onResizeARIA();
+			} );
+
+		belowEntryMetaClass( 'img.size-full' );
+		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+	} );
+} )( jQuery );
