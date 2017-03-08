@@ -51,6 +51,11 @@
 		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 	}
 
+	// I suppose this is the point where I should create buttons to toggle open the sub-menus
+
+
+
+
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
 		links[i].addEventListener( 'focus', toggleFocus, true );

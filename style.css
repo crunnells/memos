@@ -269,6 +269,7 @@ th {
 # Genericons
 --------------------------------------------------------------*/
 .menu-item-has-children a:after,
+.menu-toggle:before,
 .dropdown-toggle:after,
 .comment-reply-title small a:before,
 .search-submit:before {
@@ -295,6 +296,21 @@ th {
   top: 0.25em;
 }
 
+.menu-toggle:before {
+  content: "\f419";
+  display: inline-block;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin-right: 5px;
+}
+.toggled .menu-toggle:before {
+  content: "\f406";
+  font-size: 11px;
+  position: relative;
+  top: 1px;
+  left: -1px;
+}
+
 .dropdown-toggle:after {
   border-left-width: 1px;
   content: "\f431";
@@ -304,7 +320,7 @@ th {
   width: 48px;
 }
 
-.dropdown-toggle.toggled-on:after {
+.dropdown-toggle.toggled:after {
   content: "\f432";
 }
 
@@ -925,32 +941,8 @@ td {
   padding-left: 0;
 }
 .main-navigation ul ul {
-  background-color: #f5f5ff;
-  border-top: 4px solid #e9eff3;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 2.156225em;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-  background-color: #e1e1eb;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
+  display: none;
+  margin-left: 0.875em;
 }
 .main-navigation .nav-menu {
   border-bottom: 1px solid #e9eff3;
@@ -981,7 +973,7 @@ td {
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled .menu {
   display: block;
 }
 
@@ -993,11 +985,6 @@ td {
   font-weight: 400;
   margin: 1.076923077em auto;
   padding: 0.769230769em;
-}
-.menu-toggle:before {
-  content: "\2630";
-  display: inline-block;
-  margin-right: 5px;
 }
 .no-js .menu-toggle {
   display: none;
@@ -1697,10 +1684,37 @@ body {
   .main-navigation .nav-menu {
     border-bottom: none;
   }
-
   .main-navigation li {
     border-top: none;
     display: inline-block;
+  }
+  .main-navigation li:hover > ul, .main-navigation li.focus > ul {
+    left: auto;
+  }
+  .main-navigation ul ul {
+    background-color: #fff;
+    border-top: 4px solid #e9eff3;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    display: block;
+    float: left;
+    position: absolute;
+    top: 2.156225em;
+    left: -999em;
+    z-index: 99999;
+  }
+  .main-navigation ul ul ul {
+    left: -999em;
+    top: 0;
+  }
+  .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+    left: 100%;
+  }
+  .main-navigation ul ul a {
+    width: 200px;
+  }
+  .main-navigation ul ul :hover > a,
+  .main-navigation ul ul .focus > a {
+    background-color: rgba(225, 225, 235, 0.35);
   }
 
   .site-info .sep {

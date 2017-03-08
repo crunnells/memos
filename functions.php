@@ -162,6 +162,13 @@ function memos_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Add translation strings to
+	wp_localize_script( 'memos-navigation', 'screenReaderText', array(
+		'expand'   => __( 'expand child menu', 'memos' ),
+		'collapse' => __( 'collapse child menu', 'memos' ),
+	) );
+
 }
 add_action( 'wp_enqueue_scripts', 'memos_scripts' );
 

@@ -34,13 +34,57 @@
  */
 @media screen and (min-width: 37.5em) {
 
-	.main-navigation .nav-menu {
-		border-bottom: none;
-	}
+	.main-navigation {
 
-	.main-navigation li {
-		border-top: none;
-		display: inline-block;
+		.nav-menu {
+			border-bottom: none;
+		}
+
+		li {
+			border-top: none;
+			display: inline-block;
+
+			&:hover > ul,
+			&.focus > ul {
+				left: auto;
+			}
+		}
+
+		ul {
+
+			ul {
+				background-color: $color__background-menu;
+				border-top: 4px solid $color__border;
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				display: block;
+				float: left;
+				position: absolute;
+				top: 2.156225em;
+				left: -999em;
+				z-index: 99999;
+
+				ul {
+					left: -999em;
+					top: 0;
+				}
+
+				li {
+					&:hover > ul,
+					&.focus > ul {
+						left: 100%;
+					}
+				}
+
+				a {
+					width: 200px;
+				}
+
+				:hover > a,
+				.focus > a {
+					background-color: $color__background-menu-hover;
+				}
+			}
+		}
 	}
 
 	.site-info .sep {
