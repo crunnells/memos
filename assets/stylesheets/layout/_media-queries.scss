@@ -235,15 +235,4 @@
 		}
 
 	}
-
-	body:not(.search-results) .entry-summary li > ul,
-	body:not(.search-results) .entry-summary blockquote > ul {
-		margin-left: 1.157894737em;
-	}
-
-	body:not(.search-results) .entry-summary li > ol,
-	body:not(.search-results) .entry-summary blockquote > ol {
-		margin-left: 1.473684211em;
-	}
-
 }

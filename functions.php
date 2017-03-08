@@ -143,14 +143,19 @@ add_action( 'widgets_init', 'memos_widgets_init' );
  * Enqueue scripts and styles.
  */
 function memos_scripts() {
-	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
-
+	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'memos-fonts', memos_fonts_url() );
 
+	// Theme stylesheet.
+	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
+
+	//Handles toggling the navigation menu for small screens and enables TAB key navigation support for dropdown menus.
 	wp_enqueue_script( 'memos-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
+	// Helps with accessibility for keyboard only users.
 	wp_enqueue_script( 'memos-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	// Only load comment functionality when needed.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

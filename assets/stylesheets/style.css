@@ -392,6 +392,7 @@ blockquote, q {
 
 .meta-nav,
 .widget-title,
+.widgettitle,
 .sticky-post,
 .main-navigation,
 .post-password-form label,
@@ -1109,16 +1110,8 @@ body {
   float: none;
   margin-bottom: 7em;
   padding: 0;
-  padding-left: 7.6923%;
-  padding-right: 7.6923%;
-  width: 100%; }
-
-.content-area:after {
-  border-top: 4px solid #e9eff3;
-  content: "";
-  display: block;
-  height: 4px;
-  margin: 0 7.6923%; }
+  margin-left: 7.6923%;
+  margin-right: 7.6923%; }
 
 .site-footer {
   padding: 0 7.6923% 1.75em;
@@ -1170,8 +1163,7 @@ body {
 .entry-header,
 .entry-summary,
 .entry-content,
-.entry-footer,
-.page-content {
+.entry-footer {
   margin-right: 7.6923%;
   margin-left: 7.6923%; }
 
@@ -1372,12 +1364,27 @@ body {
   opacity: 0.7;
   padding: 0 0.53846em; }
 
+.archive .entry-footer {
+  margin-top: 0; }
+
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
+.page-header {
+  margin: 0 7.6923% 3.5em; }
+
+.page-title {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  line-height: 1.2173913043; }
+
+.page-content {
+  margin-right: 7.6923%;
+  margin-left: 7.6923%; }
+
+.error-404 .search-field,
+.no-results .search-field {
+  width: 80%; }
 
 /*--------------------------------------------------------------
 ## Media Queries
@@ -1538,13 +1545,7 @@ body {
       margin-right: 4%;
       width: 48%; }
       .sidebar-2-widgets .widget_authors > ul > li:last-child {
-        margin-right: 0; }
-  body:not(.search-results) .entry-summary li > ul,
-  body:not(.search-results) .entry-summary blockquote > ul {
-    margin-left: 1.157894737em; }
-  body:not(.search-results) .entry-summary li > ol,
-  body:not(.search-results) .entry-summary blockquote > ol {
-    margin-left: 1.473684211em; } }
+        margin-right: 0; } }
 
 /*--------------------------------------------------------------
 # Comments
@@ -1701,6 +1702,10 @@ body {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+#secondary,
+body:not(.single) .widget-area {
+  border-top: 4px solid #e9eff3; }
+
 .widget {
   font-size: 0.8215rem;
   line-height: 1.6153846154;
@@ -1710,7 +1715,8 @@ body {
   .widget:first-of-type {
     border-top: none;
     margin-top: 0; }
-  .widget .widget-title {
+  .widget .widget-title,
+  .widget .widgettitle {
     font-size: 16px;
     font-size: 1rem;
     font-weight: 400;

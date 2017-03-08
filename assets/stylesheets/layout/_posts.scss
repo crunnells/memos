@@ -35,8 +35,7 @@
 .entry-header,
 .entry-summary,
 .entry-content,
-.entry-footer,
-.page-content {
+.entry-footer {
 	margin-right: 7.6923%;
 	margin-left: 7.6923%;
 }
@@ -283,3 +282,8 @@
 	padding: 0 0.538461538em;
 }
 
+.archive {
+	.entry-footer {
+		margin-top: 0;
+	}
+}

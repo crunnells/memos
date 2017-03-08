@@ -94,16 +94,8 @@ body {
 	float: none;
 	margin-bottom: 7em;
 	padding: 0;
-	padding-left: 7.6923%;
-	padding-right: 7.6923%;
-	width: 100%;
-}
-.content-area:after {
-	border-top: 4px solid $color__border;
-	content: "";
-	display: block;
-	height: 4px;
-	margin: 0 7.6923%;
+	margin-left: 7.6923%;
+	margin-right: 7.6923%;
 }
 
 .site-footer {

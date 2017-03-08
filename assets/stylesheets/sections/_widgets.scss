@@ -1,3 +1,8 @@
+#secondary,
+body:not(.single) .widget-area {
+	border-top: 4px solid $color__border;
+}
+
 .widget {
 	font-size: 0.8215rem;
 	line-height: 1.6153846154;
@@ -9,7 +14,8 @@
 		margin-top: 0;
 	}
 
-	.widget-title {
+	.widget-title,
+	.widgettitle {
 		font-size: 16px;
 		font-size: 1rem;
 		font-weight: 400;
