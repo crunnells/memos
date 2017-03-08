@@ -157,10 +157,10 @@ function memos_scripts() {
 	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
 
 	//Handles toggling the navigation menu for small screens and enables TAB key navigation support for dropdown menus.
-	wp_enqueue_script( 'memos-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'memos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	// Helps with accessibility for keyboard only users.
-	wp_enqueue_script( 'memos-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'memos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// Only load comment functionality when needed.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
