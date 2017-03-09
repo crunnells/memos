@@ -9,7 +9,12 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 	font-weight: 700;
 	margin: 0 0 1.25em;
@@ -20,7 +25,10 @@ p {
 	margin: 0 0 1.75em;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
@@ -51,17 +59,22 @@ pre {
 	padding: 1.6em;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font-family: $font__code;
 	@include font-size(0.9375);
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: $color__background-ins;
 	text-decoration: none;
 }
@@ -70,7 +83,8 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 
 	&:before,
@@ -203,6 +217,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea,
+blockquote,
 .main-navigation li,
 .main-navigation .primary-menu,
 .menu-toggle,
@@ -220,20 +235,7 @@ textarea,
 .comment-list .trackback,
 .comment-reply-link,
 .no-comments,
-.widecolumn .mu_register .mu_alert {
-	border-color: $color__text-screen;
-	/* Fallback for IE7 and IE8 */
-	border-color: $color__border;
-}
-
-hr,
-code {
-	background-color: $color__text-screen;
-	/* Fallback for IE7 and IE8 */
-	background-color: $color__border;
-}
-
-blockquote,
+.widecolumn .mu_register .mu_alert,
 .menu-toggle.toggled-on,
 .menu-toggle.toggled-on:hover,
 .menu-toggle.toggled-on:focus,
@@ -250,7 +252,10 @@ blockquote,
 	border-color: $color__border;
 }
 
-.sharedaddy:before, .sharedaddy:last-child:after {
+hr,
+code,
+.sharedaddy:before,
+.sharedaddy:last-child:after {
 	background-color: $color__border;
 	opacity: 1;
 }
