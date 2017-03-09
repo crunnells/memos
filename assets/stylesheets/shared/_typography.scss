@@ -89,7 +89,7 @@ blockquote, q {
 .site-footer .site-title:after,
 .post-navigation .post-title,
 .required {
-	font-family: "Merriweather", Georgia, serif;
+	font-family: $font__main;
 }
 
 .meta-nav,
@@ -108,7 +108,7 @@ blockquote, q {
 .no-comments,
 .tagcloud a,
 #infinite-handle {
-	font-family: "Montserrat", "Helvetica Neue", sans-serif;
+	font-family: $font__alt;
 }
 
 .form-allowed-tags code {

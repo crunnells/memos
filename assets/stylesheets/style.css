@@ -352,7 +352,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: Merriweather, Georgia, serif;
+  font-family: "Merriweather", Georgia, serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -2163,9 +2163,6 @@ img {
   max-width: 100%;
   /* Adhere to container width. */
   vertical-align: middle; }
-
-.site .avatar {
-  border-radius: 50%; }
 
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
