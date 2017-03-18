@@ -2,10 +2,10 @@
 
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, editor-style, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, one-column, white
+Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, infinite-scroll, rtl-language-support, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, one-column, white, responsive-layout, one-column
 
 Memos is based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Memos also borrows from Twenty Sixteen https://theme.wordpress.com/themes/twentysixteen/, (C)

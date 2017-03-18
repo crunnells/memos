@@ -4,11 +4,11 @@ Theme URI: http://wordpress.com/themes/memos/
 Author: Automattic
 Author URI: http://automattic.com
 Description: Simple theme for displaying short memo posts. Built initially for wpmemos.wordpress.com
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: memos
-Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, editor-style, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, one-column, white
+Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, infinite-scroll, rtl-language-support, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, one-column, white, responsive-layout, one-column
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -294,22 +294,6 @@ th {
 	vertical-align: top;
 }
 
-.comment-reply-title small a:before {
-	content: "\f405";
-	font-size: 32px;
-	position: relative;
-	top: -5px;
-}
-
-.search-submit:before {
-	content: "\f400";
-	font-size: 24px;
-	left: 2px;
-	line-height: 42px;
-	position: relative;
-	width: 40px;
-}
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -407,7 +391,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #2e4453;
 	font-family: "Merriweather", Georgia, serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -494,24 +478,12 @@ blockquote,
 q {
 	quotes: "" "";
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
 	content: "";
-}
-
-.site-title,
-.entry-title,
-.entry-footer,
-.page-title,
-.page-links,
-.comments-title,
-.comment-reply-title,
-.site-footer .site-title:after,
-.post-navigation .post-title,
-.required {
-	font-family: "Merriweather", Georgia, serif;
 }
 
 .meta-nav,
@@ -538,13 +510,8 @@ q:after {
 }
 
 /* Main Text Color */
-body,
-blockquote cite,
-blockquote small,
-.menu-toggle,
-.dropdown-toggle,
-.page-links > .page-links-title,
-.comment-author {
+.menu-toggle, 
+.dropdown-toggle {
 	color: #2e4453;
 }
 
@@ -571,19 +538,9 @@ input[type="submit"][disabled]:focus,
 }
 
 /* Secondary Text Color */
-/**
- * IE8 and earlier will drop any block with CSS3 selectors.
- * Do not combine these styles with the next block.
- */
-body:not(.search-results) .entry-summary {
-	color: #3d596d;
-}
-
 blockquote,
 .post-password-form label,
 .post-navigation .meta-nav,
-.image-navigation,
-.comment-navigation,
 .widget_recent_entries .post-date,
 .widget_rss .rss-date,
 .widget_rss cite,
@@ -594,15 +551,12 @@ blockquote,
 .taxonomy-description,
 .entry-caption,
 .comment-metadata,
-.pingback .edit-link,
-.pingback .comment-edit-link,
 .comment-form label,
 .comment-notes,
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags,
 .site-info,
-.site-info a,
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .widecolumn label,
@@ -618,15 +572,13 @@ acronym,
 table,
 th,
 td,
-hr,
-code,
-blockquote,
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea,
+blockquote,
 .main-navigation li,
 .main-navigation .primary-menu,
 .menu-toggle,
@@ -661,7 +613,10 @@ textarea,
 	border-color: #e9eff3;
 }
 
-.sharedaddy:before, .sharedaddy:last-child:after {
+hr,
+code,
+.sharedaddy:before,
+.sharedaddy:last-child:after {
 	background-color: #e9eff3;
 	opacity: 1;
 }
@@ -757,6 +712,15 @@ input[type="search"].search-field {
 	width: 42px;
 }
 
+.search-submit:before {
+	content: "\f400";
+	font-size: 24px;
+	left: 2px;
+	line-height: 42px;
+	position: relative;
+	width: 40px;
+}
+
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -784,7 +748,7 @@ input[type="reset"]:hover,
 input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-	background: #007acc;
+	background: #0087be;
 }
 
 button:focus,
@@ -807,7 +771,7 @@ textarea {
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
-	color: #686868;
+	color: #3d596d;
 	padding: 0.625em 0.4375em;
 	width: 100%;
 }
@@ -821,7 +785,7 @@ input[type="tel"]:focus,
 input[type="number"]:focus,
 textarea:focus {
 	background-color: #fff;
-	border-color: #007acc;
+	border-color: #0087be;
 	color: #1a1a1a;
 	outline: 0;
 }
@@ -945,7 +909,7 @@ td {
 
 .main-navigation li:hover > a,
 .main-navigation li:focus > a {
-	color: #007acc;
+	color: #0087be;
 	transition: color 0.3s;
 }
 
@@ -961,7 +925,7 @@ td {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-	color: #007acc;
+	color: #0087be;
 }
 
 .main-navigation .page_item_has_children > a:after,
@@ -1008,8 +972,8 @@ td {
 .menu-toggle:hover,
 .menu-toggle:focus {
 	background-color: transparent;
-	border-color: #007acc;
-	color: #007acc;
+	border-color: #0087be;
+	color: #0087be;
 }
 
 .toggled-on .main-navigation .menu-toggle,
@@ -1054,7 +1018,7 @@ td {
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
 	background-color: transparent;
-	color: #007acc;
+	color: #0087be;
 }
 
 .dropdown-toggle:focus {
@@ -1088,7 +1052,7 @@ td {
 
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
-	color: #007acc;
+	color: #0087be;
 }
 
 .post-navigation,
@@ -1107,7 +1071,7 @@ td {
 
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
-	color: #007acc;
+	color: #0087be;
 }
 
 .post-navigation span {
@@ -1119,7 +1083,6 @@ td {
 }
 
 .post-navigation .meta-nav {
-	color: #686868;
 	font-size: 11px;
 	font-size: 0.6875rem;
 	letter-spacing: 0.090909em;
@@ -1145,7 +1108,7 @@ td {
 
 .posts-navigation .nav-links a:hover,
 .posts-navigation .nav-links a:focus {
-	color: #007acc;
+	color: #0087be;
 }
 
 .posts-navigation .nav-links div {
@@ -1189,14 +1152,14 @@ td {
 }
 
 .jetpack-social-navigation .menu-item a:hover:before {
-	color: #007acc;
+	color: #0087be;
 }
 
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
 a {
-	color: #007acc;
+	color: #0087be;
 	text-decoration: none;
 }
 
@@ -1217,7 +1180,7 @@ a:active {
 
 .main-navigation a,
 .social-navigation a,
-.post-navigation a,
+.post-navigation .post-title,
 .pagination a:hover,
 .pagination a:focus,
 .widget-title a,
@@ -1229,46 +1192,25 @@ a:active {
 	color: #2e4453;
 }
 
-a:hover,
-a:focus,
-a:active,
-.post-navigation .meta-nav,
-.image-navigation,
-.comment-navigation,
-.widget_recent_entries .post-date,
-.widget_rss .rss-date,
-.widget_rss cite,
-.site-description,
-.author-bio,
-.entry-footer,
 .entry-footer a,
-.sticky-post,
-.taxonomy-description,
-.entry-caption,
-.comment-metadata,
-.pingback .edit-link,
-.comment-metadata a,
-.pingback .comment-edit-link,
-.comment-form label,
-.comment-notes,
-.comment-author a,
-.comment-awaiting-moderation,
-.logged-in-as,
-.form-allowed-tags,
-.site-info,
 .site-info a,
-.wp-caption .wp-caption-text,
-.gallery-caption,
-.widecolumn label,
-.widecolumn .mu_register label,
-.widget_calendar tbody a:hover,
-.widget_calendar tbody a:focus {
+.comment-metadata a,
+.comment-author a{
 	color: #3d596d;
 }
 
+.entry-footer a:hover,
+.entry-footer a:focus,
+.comment-reply-link,
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+.comment-metadata a:hover,
+.comment-metadata a:focus,
+.pingback .comment-edit-link:hover,
+.pingback .comment-edit-link:focus,
 .entry-title a:hover,
 .author-bio a {
-	color: #007acc;
+	color: #0087be;
 }
 
 .entry-content a,
@@ -1298,13 +1240,13 @@ a:active,
 .logged-in-as a:focus,
 .comment-content a:hover,
 .comment-content a:focus,
+.comment-reply-title small a:hover,
+.comment-reply-title small a:focus,
 .pingback .comment-body > a:hover,
-.pingback .comment-body > a:focus,
-.textwidget a:hover,
-.textwidget a:focus {
+.pingback .comment-body > a:focus {
 	box-shadow: none;
-	color: #3d596d;
 }
+
 
 /*--------------------------------------------------------------
 # Layout
@@ -1525,7 +1467,6 @@ body {
 }
 
 .sticky-post {
-	color: #686868;
 	display: block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -1636,7 +1577,7 @@ body {
 
 .page-links a:hover,
 .page-links a:focus {
-	background-color: #007acc;
+	background-color: #0087be;
 	border-color: transparent;
 	color: #fff;
 }
@@ -1672,7 +1613,6 @@ body {
 }
 
 .post-password-form label {
-	color: #686868;
 	display: inline-block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -1732,13 +1672,16 @@ body {
 ## Pages
 --------------------------------------------------------------*/
 .page-header {
+	border-top: 4px solid $color__border;
 	margin: 0 7.6923% 3.5em;
+	padding-top: 1.75em;
 }
 
 .page-title {
 	font-size: 23px;
 	font-size: 1.4375rem;
 	line-height: 1.2173913043;
+	margin-bottom: 0;
 }
 
 .page-content {
@@ -1766,6 +1709,13 @@ body {
 	font-weight: 700;
 	line-height: 1.3125;
 	padding-top: 1.217391304em;
+}
+
+.comment-reply-title small a:before {
+	content: "\f405";
+	font-size: 32px;
+	position: relative;
+	top: -5px;
 }
 
 .comments-title {
@@ -1801,7 +1751,6 @@ body {
 }
 
 .comment-author {
-	color: #404040;
 	margin-bottom: 0;
 }
 
@@ -1815,7 +1764,6 @@ body {
 
 .comment-metadata,
 .pingback .edit-link {
-	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -1824,18 +1772,6 @@ body {
 .comment-metadata {
 	margin-bottom: 2.1538461538em;
 	margin-left: 2.625em;
-}
-
-.comment-metadata a,
-.pingback .comment-edit-link {
-	color: #686868;
-}
-
-.comment-metadata a:hover,
-.comment-metadata a:focus,
-.pingback .comment-edit-link:hover,
-.pingback .comment-edit-link:focus {
-	color: #007acc;
 }
 
 .comment-metadata .edit-link,
@@ -1864,7 +1800,6 @@ body {
 .comment-reply-link {
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
-	color: #007acc;
 	display: inline-block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -1875,12 +1810,10 @@ body {
 .comment-reply-link:hover,
 .comment-reply-link:focus {
 	border-color: currentColor;
-	color: #007acc;
 	outline: 0;
 }
 
 .comment-form label {
-	color: #686868;
 	display: block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -1898,7 +1831,6 @@ body {
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -1922,7 +1854,7 @@ body {
 }
 
 .required {
-	color: #007acc;
+	color: #0087be;
 }
 
 .comment-reply-title small {
@@ -1932,11 +1864,6 @@ body {
 
 .comment-reply-title small a {
 	float: right;
-}
-
-.comment-reply-title small a:hover,
-.comment-reply-title small a:focus {
-	color: #1a1a1a;
 }
 
 /*--------------------------------------------------------------
@@ -2018,7 +1945,7 @@ body:not(.single) .widget-area {
 }
 
 .widget_calendar tbody a {
-	background-color: #007acc;
+	background-color: #0087be;
 	color: #fff;
 	display: block;
 	font-weight: 700;
@@ -2026,7 +1953,7 @@ body:not(.single) .widget-area {
 
 .widget_calendar tbody a:hover,
 .widget_calendar tbody a:focus {
-	background-color: #686868;
+	background-color: #3d596d;
 	color: #fff;
 }
 
@@ -2124,8 +2051,8 @@ body:not(.single) .widget-area {
 
 .tagcloud a:hover,
 .tagcloud a:focus {
-	border-color: #007acc;
-	color: #007acc;
+	border-color: #0087be;
+	color: #0087be;
 	outline: 0;
 }
 
@@ -2161,7 +2088,7 @@ body:not(.single) .widget-area {
 
 .widget_goodreads div[class^="gr_custom_container"] a:hover,
 .widget_goodreads div[class^="gr_custom_container"] a:active {
-	color: #007acc;
+	color: #0087be;
 }
 
 .widget_goodreads div[class^="gr_custom_author"],
@@ -2203,7 +2130,7 @@ body:not(.single) .widget-area {
 }
 
 .widget.widget_wpcom_social_media_icons_widget li a:hover:before {
-	color: #007acc;
+	color: #0087be;
 }
 
 /* Jetpack Author Widget */
@@ -2243,7 +2170,7 @@ body:not(.single) .widget-area {
 
 .widget.widget_authors > ul > li > a:hover,
 .widget.widget_authors > ul > li > a:active {
-	color: #007acc;
+	color: #0087be;
 }
 
 .widget.widget_authors img {
@@ -2280,7 +2207,7 @@ body:not(.single) .widget-area {
 }
 
 #infinite-handle span:hover {
-	background-color: #007acc;
+	background-color: #0087be;
 	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
 }
