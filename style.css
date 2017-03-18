@@ -1221,8 +1221,6 @@ a:active {
 .pingback .comment-body > a,
 .textwidget a,
 .author-link,
-.entry-content a:hover,
-.entry-footer a:hover,
 .site-info a:hover,
 .site-footer a:hover {
 	box-shadow: 0 1px 0 0 currentColor;
@@ -1915,6 +1913,11 @@ body:not(.single) .widget-area {
 .widget li > ul,
 .widget li > ol {
 	margin-bottom: 0;
+}
+
+.textwidget a:hover,
+.textwidget a:focus {
+	box-shadow: none;
 }
 
 /* Calendar widget */
