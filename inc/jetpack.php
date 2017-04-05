@@ -18,7 +18,7 @@ function memos_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container'			=> 'main',
 		'render'			=> 'memos_infinite_scroll_render',
-		'footer_widgets'	=> array( 'sidebar-1', 'sidebar-2' ) ,
+		'footer_widgets'	=> 'sidebar-1',
 		'footer'			=> 'page',
 	) );
 
@@ -30,23 +30,31 @@ function memos_jetpack_setup() {
 
 	// Add theme support for content options
 	add_theme_support( 'jetpack-content-options', array(
-	    'blog-display'			=> 'content',
-	    'author-bio'			=> true,
-	    'post-details'			=> array(
-	        'stylesheet'		=> 'memos-style',
-	        'author'			=> '.byline, .byline:after',
-	        'date'				=> '.posted-on, .posted-on:after',
-	        'categories'		=> '.cat-links',
-	        'tags'				=> '.tags-links, .tags-links:after',
-	    ),
-	    'featured-images'		=> array(
-	        'post'				=> true,
-	        'page'				=> true,
-	    ),
+		'blog-display'			=> 'content',
+		'author-bio'			=> true,
+		'post-details'			=> array(
+			'stylesheet'		=> 'memos-style',
+			'author'			=> '.byline, .byline:after',
+			'date'				=> '.posted-on, .posted-on:after',
+			'categories'		=> '.cat-links',
+			'tags'				=> '.tags-links, .tags-links:after',
+		),
+		'featured-images'		=> array(
+			'post'				=> true,
+			'page'				=> true,
+		),
 	) );
-
 }
 add_action( 'after_setup_theme', 'memos_jetpack_setup' );
+
+
+/**
+ * Filter the Jetpack Gallery width to fit the full-size widget area
+ */
+add_filter( 'gallery_widget_content_width', 'memos_widget_content_width' );
+function memos_widget_content_width() {
+	return $GLOBALS['content_width'];
+}
 
 /**
  * Custom render function for Infinite Scroll.

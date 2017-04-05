@@ -60,7 +60,6 @@ function memos_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -124,7 +123,7 @@ function memos_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'memos' ),
 		'id'            => 'sidebar-1',
-		'description'   => 'This widget area is at the bottom of the page and displays widgets in two columns.',
+		'description'   => __( 'This widget area is at the bottom of the page and displays widgets in two columns.', 'memos' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -134,7 +133,7 @@ function memos_widgets_init() {
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Content Bottom', 'memos' ),
 		'id'			=> 'sidebar-2',
-		'description'	=> 'This widget area is below your post and page content and above the Footer widget area in a single column.',
+		'description'	=> __( 'This widget area is below your post and page content and above the Footer widget area in a single column.', 'memos' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2 class="widget-title">',
@@ -216,6 +215,23 @@ function memos_fonts_url() {
 	return esc_url_raw( $fonts_url );
 }
 endif;
+
+/**
+ * Count widgets in a widget area
+ */
+function memos_count_widgets( $sidebar_id ) {
+	global $_wp_sidebars_widgets;
+	if ( empty( $_wp_sidebars_widgets ) ) :
+		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
+	endif;
+
+	if ( isset( $_wp_sidebars_widgets[ $sidebar_id ] ) ) {
+		$widget_count = count( $_wp_sidebars_widgets[ $sidebar_id ] );
+		$widget_classes = 'widget-count-' . $widget_count;
+
+		return $widget_classes;
+	}
+}
 
 /**
  * Custom template tags for this theme.

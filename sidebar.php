@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="widget-area <?php echo memos_count_widgets('sidebar-1'); ?>" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside>

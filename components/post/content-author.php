@@ -6,7 +6,7 @@
 				</h2>
 				<p class="author-bio"><?php the_author_meta( 'description' ); ?>
 					<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
-						View all posts by <?php the_author(); ?>
+						<?php printf( esc_html__( 'View all posts by %s', 'memos' ), the_author() ); ?>
 					</a>
 				</p>
 			</div>

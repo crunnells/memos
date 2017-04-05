@@ -16,12 +16,8 @@ Description: Used to style the TinyMCE Editor.
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-	color: #404040;
+body {
+	color: #2e4453;
 	font-family: "Merriweather", Georgia, serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -90,7 +86,7 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted #e9eff3;
 	cursor: help;
 }
 
@@ -116,30 +112,10 @@ q:after {
 	content: "";
 }
 
-.required {
-	font-family: "Merriweather", Georgia, serif;
-}
-
 /* Main Text Color */
-body,
 blockquote cite,
 blockquote small {
 	color: #2e4453;
-}
-
-button,
-button[disabled]:hover,
-button[disabled]:focus,
-input[type="button"],
-input[type="button"][disabled]:hover,
-input[type="button"][disabled]:focus,
-input[type="reset"],
-input[type="reset"][disabled]:hover,
-input[type="reset"][disabled]:focus,
-input[type="submit"],
-input[type="submit"][disabled]:hover,
-input[type="submit"][disabled]:focus {
-	background-color: #2e4453;
 }
 
 /* Secondary Text Color */
@@ -158,17 +134,9 @@ blockquote,
 /* Border Color */
 fieldset,
 pre,
-abbr,
-acronym,
 table,
 th,
-td,
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
+td {
 	border-color: #e9eff3;
 }
 
@@ -297,20 +265,6 @@ img {
 	vertical-align: middle;
 }
 
-.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
 .wp-caption {
 	margin-bottom: 1.75em;
 	max-width: 100%;
@@ -333,30 +287,6 @@ object {
 
 .wp-caption.alignright {
 	margin-left: 20px;
-}
-
-.wp-caption .wp-caption-text {
-	color: #686868;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-style: italic;
-	line-height: 1.6153846154;
-	padding-top: 0.5384615385em;
-	text-align: center;
-}
-
-/* Media Elements */
-.mejs-container {
-	margin-bottom: 1.5em;
-}
-
-/* Audio Player */
-.mejs-controls a.mejs-horizontal-volume-slider,
-.mejs-controls a.mejs-horizontal-volume-slider:focus,
-.mejs-controls a.mejs-horizontal-volume-slider:hover {
-	background: transparent;
-	border: 0;
-	box-shadow: none;
 }
 
 /*--------------------------------------------------------------
@@ -415,5 +345,3 @@ object {
 	line-height: 1.6153846154;
 	padding-top: 0.5384615385em;
 }
-
-/*# sourceMappingURL=editor-style.css.map */

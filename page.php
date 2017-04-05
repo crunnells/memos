@@ -32,9 +32,12 @@ get_header(); ?>
 
 		</main>
 
+		<?php if ( is_active_sidebar( 'sidebar-2' ) ): // Are there any active widgets? ?>
 		<aside id="sidebar-2-widgets" class="sidebar-2-widgets widget-area" role="complementary">
 			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</aside>
+		<?php endif; ?>
+
 	</div>
 <?php
 get_sidebar();
