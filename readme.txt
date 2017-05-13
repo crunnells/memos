@@ -2,7 +2,7 @@
 
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: clean, light, simple, author-bio, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, infinite-scroll, rtl-language-support, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, one-column, white, responsive-layout, one-column
@@ -32,6 +32,9 @@ Memos is a clean, simple, clutter-free design for personal bloggers. Like it's n
 Memos includes support for Jetpack's Infinite Scroll and Content Options as well as other features.
 
 == Changelog ==
+
+= 1.0.4 - 2017-05-12 =
+* Fixed separator display .entry-meta on index and archive pages
 
 = 1.0.3 - 2017-03-31 =
 * Refactored more CSS

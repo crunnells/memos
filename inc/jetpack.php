@@ -36,7 +36,7 @@ function memos_jetpack_setup() {
 			'stylesheet'		=> 'memos-style',
 			'author'			=> '.byline, .byline:after',
 			'date'				=> '.posted-on, .posted-on:after',
-			'categories'		=> '.cat-links',
+			'categories'		=> '.cat-links, .cat-links:after',
 			'tags'				=> '.tags-links, .tags-links:after',
 		),
 		'featured-images'		=> array(

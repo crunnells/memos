@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/memos/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: Simple theme for displaying short memo posts. Built initially for wpmemos.wordpress.com
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: memos
@@ -473,7 +473,7 @@ big {
 
 blockquote,
 q {
-	quotes: "" "";
+	quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote:before,
@@ -1355,11 +1355,17 @@ body {
 	padding: 0.25em 0;
 }
 
-.entry-footer > span:not(:last-child):after {
+.entry-footer > span:not(:last-child):after,
+.entry-footer .visible:after {
 	content: "\002f";
 	display: inline-block;
 	opacity: 0.7;
 	padding: 0 0.538461538em;
+}
+
+.entry-footer .visible.last:after {
+	content: '';
+	padding: 0;
 }
 
 .entry-footer span {
@@ -1390,12 +1396,6 @@ body {
 
 .updated:not(.published) {
 	display: none;
-}
-
-.byline,
-.single .byline,
-.group-blog .byline {
-	display: inline-block;
 }
 
 .byline .avatar {
@@ -1713,7 +1713,7 @@ body {
 	content: "\002f";
 	display: inline-block;
 	opacity: 0.7;
-	padding: 0 0.538461538em;
+	padding: 0 0.538461em 0 0.384615em;
 }
 
 .comment-content ul,
@@ -1733,7 +1733,7 @@ body {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1;
-	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
+	padding: 0.538461em 0.538461em 0.461538em;
 }
 
 .comment-reply-link:hover,

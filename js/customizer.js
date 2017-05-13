@@ -31,12 +31,49 @@
 			} else {
 				$( '.site-title a, .site-description' ).css( {
 					'clip': 'auto',
+					'color': to,
 					'position': 'relative'
-				} );
-				$( '.site-title a, .site-description' ).css( {
-					'color': to
 				} );
 			}
 		} );
 	} );
+
+	// Show/hide post detail separators
+	wp.customize( 'jetpack_content_post_details_author', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'byline', to );
+		} ) ;
+	} );
+
+	wp.customize( 'jetpack_content_post_details_date', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'posted-on', to );
+		} ) ;
+	} );
+
+	wp.customize( 'jetpack_content_post_details_categories', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'cat-links', to );
+		} ) ;
+	} );
+
+	wp.customize( 'jetpack_content_post_details_tags', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'tags-links', to );
+		} ) ;
+	} );
+
+	// Apply classnames to visible content options
+	function entry_meta_last_class( span, to ) {
+		$( '.entry-footer .visible.last' ).removeClass( 'last' );
+
+		if ( to == true ){
+			$( '.' + span ).addClass( 'visible' );
+		} else {
+			$( '.' + span ).removeClass( 'visible' );
+		}
+
+		$( '.entry-footer .visible' ).last().addClass( 'last' );
+	}
+
 } )( jQuery );

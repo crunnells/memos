@@ -7,23 +7,21 @@
  * @package Memos
  */
 
-if ( ! function_exists( 'memos_posted_on' ) ) :
+if ( ! function_exists( 'memos_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the author, post-date/time, categories, tags and comments.
  */
-function memos_posted_on() {
+function memos_entry_footer() {
 	if ( 'post' === get_post_type() && is_single() ) {
 		// see Jetpack functions
 		memos_author_bio();
-	} else {
-		echo '
-		<span class="byline">
-			<span class="screen-reader-text">' . esc_html_x( 'Author', 'post author', 'memos' ) . '</span>
-			<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) . '
-				<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>
-			</span>
-		</span>';
 	}
+
+	// display the author name
+	echo '<span class="byline"><span class="screen-reader-text">' . esc_html_x( 'Author', 'post author', 'memos' ) . '</span>' .
+			'<span class="author vcard">' . get_avatar( get_the_author_meta( 'user_email' ), 32 ) .
+			'<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>' .
+		'</span></span>';
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -38,21 +36,10 @@ function memos_posted_on() {
 	);
 
 	if ( ! is_sticky() ) {
-		echo '
-		<span class="posted-on">
-			<span class="screen-reader-text">' . esc_html_x( 'Posted on', 'post date', 'memos' ) . '</span>
-			<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>
-		</span>';
+		echo '<span class="posted-on"><span class="screen-reader-text">' . esc_html_x( 'Posted on', 'post date', 'memos' ) . '</span>
+			<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
 	}
 
-}
-endif;
-
-if ( ! function_exists( 'memos_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function memos_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */

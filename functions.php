@@ -150,7 +150,7 @@ function memos_scripts() {
 	wp_enqueue_style( 'memos-fonts', memos_fonts_url() );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons/genericons.css', array(), '4.0.5' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'memos-style', get_stylesheet_uri() );
@@ -160,6 +160,9 @@ function memos_scripts() {
 
 	// Helps with accessibility for keyboard only users.
 	wp_enqueue_script( 'memos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	// Applies styling to entry-content tags to hide separators
+	wp_enqueue_script( 'memos-entry-footer', get_template_directory_uri() . '/js/entry-footer.js', array( 'jquery' ), '20170512', true );
 
 	// Only load comment functionality when needed.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
